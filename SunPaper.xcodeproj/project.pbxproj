@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505B01C6FD78E003B6295 /* AppDelegate.swift */; };
+		63E505B31C6FD78E003B6295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B21C6FD78E003B6295 /* Assets.xcassets */; };
+		63E505B61C6FD78E003B6295 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B41C6FD78E003B6295 /* MainMenu.xib */; };
+		63E505C11C6FD78E003B6295 /* SunPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505C01C6FD78E003B6295 /* SunPaperTests.swift */; };
+		63E505CC1C6FD78E003B6295 /* SunPaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505CB1C6FD78E003B6295 /* SunPaperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63E505BD1C6FD78E003B6295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63E505A51C6FD78E003B6295 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63E505AC1C6FD78E003B6295;
+			remoteInfo = SunPaper;
+		};
+		63E505C81C6FD78E003B6295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63E505A51C6FD78E003B6295 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63E505AC1C6FD78E003B6295;
+			remoteInfo = SunPaper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63E505AD1C6FD78E003B6295 /* SunPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E505B01C6FD78E003B6295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63E505B21C6FD78E003B6295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63E505B51C6FD78E003B6295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		63E505B71C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E505BC1C6FD78E003B6295 /* SunPaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunPaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E505C01C6FD78E003B6295 /* SunPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunPaperTests.swift; sourceTree = "<group>"; };
+		63E505C21C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E505C71C6FD78E003B6295 /* SunPaperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunPaperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E505CB1C6FD78E003B6295 /* SunPaperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunPaperUITests.swift; sourceTree = "<group>"; };
+		63E505CD1C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63E505AA1C6FD78E003B6295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E505B91C6FD78E003B6295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E505C41C6FD78E003B6295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63E505A41C6FD78E003B6295 = {
+			isa = PBXGroup;
+			children = (
+				63E505AF1C6FD78E003B6295 /* SunPaper */,
+				63E505BF1C6FD78E003B6295 /* SunPaperTests */,
+				63E505CA1C6FD78E003B6295 /* SunPaperUITests */,
+				63E505AE1C6FD78E003B6295 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63E505AE1C6FD78E003B6295 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63E505AD1C6FD78E003B6295 /* SunPaper.app */,
+				63E505BC1C6FD78E003B6295 /* SunPaperTests.xctest */,
+				63E505C71C6FD78E003B6295 /* SunPaperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63E505AF1C6FD78E003B6295 /* SunPaper */ = {
+			isa = PBXGroup;
+			children = (
+				63E505B01C6FD78E003B6295 /* AppDelegate.swift */,
+				63E505B21C6FD78E003B6295 /* Assets.xcassets */,
+				63E505B41C6FD78E003B6295 /* MainMenu.xib */,
+				63E505B71C6FD78E003B6295 /* Info.plist */,
+			);
+			path = SunPaper;
+			sourceTree = "<group>";
+		};
+		63E505BF1C6FD78E003B6295 /* SunPaperTests */ = {
+			isa = PBXGroup;
+			children = (
+				63E505C01C6FD78E003B6295 /* SunPaperTests.swift */,
+				63E505C21C6FD78E003B6295 /* Info.plist */,
+			);
+			path = SunPaperTests;
+			sourceTree = "<group>";
+		};
+		63E505CA1C6FD78E003B6295 /* SunPaperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				63E505CB1C6FD78E003B6295 /* SunPaperUITests.swift */,
+				63E505CD1C6FD78E003B6295 /* Info.plist */,
+			);
+			path = SunPaperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63E505AC1C6FD78E003B6295 /* SunPaper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaper" */;
+			buildPhases = (
+				63E505A91C6FD78E003B6295 /* Sources */,
+				63E505AA1C6FD78E003B6295 /* Frameworks */,
+				63E505AB1C6FD78E003B6295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunPaper;
+			productName = SunPaper;
+			productReference = 63E505AD1C6FD78E003B6295 /* SunPaper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63E505BB1C6FD78E003B6295 /* SunPaperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperTests" */;
+			buildPhases = (
+				63E505B81C6FD78E003B6295 /* Sources */,
+				63E505B91C6FD78E003B6295 /* Frameworks */,
+				63E505BA1C6FD78E003B6295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63E505BE1C6FD78E003B6295 /* PBXTargetDependency */,
+			);
+			name = SunPaperTests;
+			productName = SunPaperTests;
+			productReference = 63E505BC1C6FD78E003B6295 /* SunPaperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		63E505C61C6FD78E003B6295 /* SunPaperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperUITests" */;
+			buildPhases = (
+				63E505C31C6FD78E003B6295 /* Sources */,
+				63E505C41C6FD78E003B6295 /* Frameworks */,
+				63E505C51C6FD78E003B6295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63E505C91C6FD78E003B6295 /* PBXTargetDependency */,
+			);
+			name = SunPaperUITests;
+			productName = SunPaperUITests;
+			productReference = 63E505C71C6FD78E003B6295 /* SunPaperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63E505A51C6FD78E003B6295 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "David Celis";
+				TargetAttributes = {
+					63E505AC1C6FD78E003B6295 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					63E505BB1C6FD78E003B6295 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 63E505AC1C6FD78E003B6295;
+					};
+					63E505C61C6FD78E003B6295 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 63E505AC1C6FD78E003B6295;
+					};
+				};
+			};
+			buildConfigurationList = 63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "SunPaper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63E505A41C6FD78E003B6295;
+			productRefGroup = 63E505AE1C6FD78E003B6295 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63E505AC1C6FD78E003B6295 /* SunPaper */,
+				63E505BB1C6FD78E003B6295 /* SunPaperTests */,
+				63E505C61C6FD78E003B6295 /* SunPaperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63E505AB1C6FD78E003B6295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E505B31C6FD78E003B6295 /* Assets.xcassets in Resources */,
+				63E505B61C6FD78E003B6295 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E505BA1C6FD78E003B6295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E505C51C6FD78E003B6295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63E505A91C6FD78E003B6295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E505B81C6FD78E003B6295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E505C11C6FD78E003B6295 /* SunPaperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E505C31C6FD78E003B6295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E505CC1C6FD78E003B6295 /* SunPaperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63E505BE1C6FD78E003B6295 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63E505AC1C6FD78E003B6295 /* SunPaper */;
+			targetProxy = 63E505BD1C6FD78E003B6295 /* PBXContainerItemProxy */;
+		};
+		63E505C91C6FD78E003B6295 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63E505AC1C6FD78E003B6295 /* SunPaper */;
+			targetProxy = 63E505C81C6FD78E003B6295 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63E505B41C6FD78E003B6295 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63E505B51C6FD78E003B6295 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63E505CE1C6FD78E003B6295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63E505CF1C6FD78E003B6295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		63E505D11C6FD78E003B6295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunPaper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		63E505D21C6FD78E003B6295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunPaper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		63E505D41C6FD78E003B6295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunPaperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunPaper.app/Contents/MacOS/SunPaper";
+			};
+			name = Debug;
+		};
+		63E505D51C6FD78E003B6295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunPaperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunPaper.app/Contents/MacOS/SunPaper";
+			};
+			name = Release;
+		};
+		63E505D71C6FD78E003B6295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunPaperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SunPaper;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		63E505D81C6FD78E003B6295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunPaperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SunPaper;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "SunPaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E505CE1C6FD78E003B6295 /* Debug */,
+				63E505CF1C6FD78E003B6295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E505D11C6FD78E003B6295 /* Debug */,
+				63E505D21C6FD78E003B6295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E505D41C6FD78E003B6295 /* Debug */,
+				63E505D51C6FD78E003B6295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E505D71C6FD78E003B6295 /* Debug */,
+				63E505D81C6FD78E003B6295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63E505A51C6FD78E003B6295 /* Project object */;
+}
