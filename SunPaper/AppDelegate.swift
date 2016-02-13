@@ -20,7 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        statusItem.title = "SunPaper"
+        let icon = NSImage(named: "StatusIcon")
+        icon?.template = true // Dark mode support
+
+        statusItem.image = icon
         statusItem.menu = statusMenu
     }
 
