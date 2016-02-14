@@ -11,7 +11,7 @@ import CoreLocation
 
 class StatusMenuController: NSObject, CLLocationManagerDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
-    
+
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let sunriseSunsetAPI = SunriseSunsetAPI()
     let locationManager = CLLocationManager()
@@ -32,19 +32,25 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         default:
             NSLog("Location Services can be authorized or accessed.")
         }
+
+        locationManager.startUpdatingLocation()
     }
 
     @IBAction func updateClicked(sender: NSMenuItem) {
         locationManager.startUpdatingLocation()
+    }
 
-        if let location = locationManager.location {
-            sunriseSunsetAPI.getSunsetAndSunriseTimes(location.coordinate.latitude, longitude: location.coordinate.longitude)
+    @IBAction func quitClicked(sender: NSMenuItem) {
+        NSApplication.sharedApplication().terminate(self)
+    }
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
+        let location = locations.last as! CLLocation
+
+        sunriseSunsetAPI.getSunData(location.coordinate.latitude, longitude: location.coordinate.longitude) { sunData in
+            NSLog("\(sunData)")
         }
 
         locationManager.stopUpdatingLocation()
-    }
-    
-    @IBAction func quitClicked(sender: NSMenuItem) {
-        NSApplication.sharedApplication().terminate(self)
     }
 }
