@@ -479,6 +479,7 @@
 				63E505D21C6FD78E003B6295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +488,7 @@
 				63E505D51C6FD78E003B6295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperUITests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +497,7 @@
 				63E505D81C6FD78E003B6295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

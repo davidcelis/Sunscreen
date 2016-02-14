@@ -10,8 +10,8 @@ import Foundation
 
 class SunriseSunsetAPI {
     let baseURL = "http://api.sunrise-sunset.org/json"
-    
-    func getSunsetAndSunriseTimes(latitude: Float, longitude: Float) {
+
+    func getSunsetAndSunriseTimes(latitude: Double, longitude: Double) {
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: "http://api.sunrise-sunset.org/json?lat=\(latitude)&lng=\(longitude)&formatted=0")
 
@@ -24,7 +24,7 @@ class SunriseSunsetAPI {
                 switch httpResponse.statusCode {
                 case 200:
                     let results = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                    NSLog(results)
+                    NSLog("Got results for coordinates \(latitude), \(longitude): \(results)")
                 default:
                     NSLog("sunrise-sunset API returned response: %d %@", httpResponse.statusCode, NSHTTPURLResponse.localizedStringForStatusCode(httpResponse.statusCode))
                 }

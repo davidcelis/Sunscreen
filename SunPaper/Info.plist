@@ -32,16 +32,22 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>api.sunrise-sunset.org</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-            </dict>
-        </dict>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>api.sunrise-sunset.org</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSLocationUsageDescription</key>
+	<string>Your location is required to calculate when the sun rises and sets.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required to calculate when the sun rises and sets.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required to calculate when the sun rises and sets.</string>
 </dict>
 </plist>
