@@ -7,6 +7,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="SunPaper" customModuleProvider="target">
             <connections>
+                <outlet property="afternoonWallpaper" destination="c0g-HT-JkY" id="5CF-Gz-qzg"/>
+                <outlet property="morningWallpaper" destination="G8z-Zc-Fcj" id="ex1-LP-Wfr"/>
+                <outlet property="nightWallpaper" destination="rvT-ug-QRH" id="sQe-BZ-EWm"/>
+                <outlet property="sunriseWallpaper" destination="H4F-VR-y2u" id="Md3-6P-Hgi"/>
+                <outlet property="sunsetWallpaper" destination="Pz8-5Q-9KG" id="ULk-WX-ZU8"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -16,7 +21,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="354" height="446"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="354" height="446"/>
                 <autoresizingMask key="autoresizingMask"/>
