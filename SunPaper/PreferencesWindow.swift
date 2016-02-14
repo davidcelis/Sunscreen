@@ -29,12 +29,6 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
     }
     
     func windowWillClose(notification: NSNotification) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        defaults.setValue(sunriseWallpaper.image, forKey: "sunriseWallpaper")
-        defaults.setValue(morningWallpaper.image, forKey: "morningWallpaper")
-        defaults.setValue(afternoonWallpaper.image, forKey: "afternoonWallpaper")
-        defaults.setValue(sunsetWallpaper.image, forKey: "sunsetWallpaper")
-        defaults.setValue(nightWallpaper.image, forKey: "nightWallpaper")
+
     }
 }

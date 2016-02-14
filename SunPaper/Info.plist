@@ -17,21 +17,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.entertainment</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 David Celis. All rights reserved.</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -43,11 +39,17 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2016 David Celis. All rights reserved.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required to calculate when the sun rises and sets.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Your location is required to calculate when the sun rises and sets.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required to calculate when the sun rises and sets.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Your location is required to calculate when the sun rises and sets.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>
