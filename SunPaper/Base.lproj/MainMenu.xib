@@ -27,6 +27,11 @@
                         <action selector="updateClicked:" target="t9z-OC-K39" id="mqf-zw-w1x"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Preferences" keyEquivalent="," id="LBZ-Q6-sMv">
+                    <connections>
+                        <action selector="preferencesClicked:" target="t9z-OC-K39" id="Ttf-8H-Mms"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="eTX-yh-aIB"/>
                 <menuItem title="Quit" keyEquivalent="q" id="mWl-QP-AUn">
                     <connections>

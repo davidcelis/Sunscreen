@@ -12,6 +12,8 @@ import CoreLocation
 class StatusMenuController: NSObject, CLLocationManagerDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
 
+    var preferencesWindow: PreferencesWindow!
+
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let sunriseSunsetAPI = SunriseSunsetAPI()
     let locationManager = CLLocationManager()
@@ -22,6 +24,9 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
         statusItem.image = icon
         statusItem.menu = statusMenu
+
+        preferencesWindow = PreferencesWindow()
+
         locationManager.delegate = self
 
         switch CLLocationManager.authorizationStatus() {
@@ -38,6 +43,10 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
     @IBAction func updateClicked(sender: NSMenuItem) {
         locationManager.startUpdatingLocation()
+    }
+
+    @IBAction func preferencesClicked(sender: NSMenuItem) {
+        preferencesWindow.showWindow(nil)
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630918781C70F9E8004F7D4B /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630918761C70F9E8004F7D4B /* PreferencesWindow.swift */; };
+		630918791C70F9E8004F7D4B /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630918771C70F9E8004F7D4B /* PreferencesWindow.xib */; };
 		63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505B01C6FD78E003B6295 /* AppDelegate.swift */; };
 		63E505B31C6FD78E003B6295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B21C6FD78E003B6295 /* Assets.xcassets */; };
 		63E505B61C6FD78E003B6295 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B41C6FD78E003B6295 /* MainMenu.xib */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		630918761C70F9E8004F7D4B /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		630918771C70F9E8004F7D4B /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		63E505AD1C6FD78E003B6295 /* SunPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E505B01C6FD78E003B6295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E505B21C6FD78E003B6295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				63E505B01C6FD78E003B6295 /* AppDelegate.swift */,
+				630918761C70F9E8004F7D4B /* PreferencesWindow.swift */,
+				630918771C70F9E8004F7D4B /* PreferencesWindow.xib */,
 				63E505DB1C6FEA6E003B6295 /* SunriseSunsetAPI.swift */,
 				63E505D91C6FE77D003B6295 /* StatusMenuController.swift */,
 				63E505B21C6FD78E003B6295 /* Assets.xcassets */,
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E505B31C6FD78E003B6295 /* Assets.xcassets in Resources */,
+				630918791C70F9E8004F7D4B /* PreferencesWindow.xib in Resources */,
 				63E505B61C6FD78E003B6295 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630918781C70F9E8004F7D4B /* PreferencesWindow.swift in Sources */,
 				63E505DA1C6FE77D003B6295 /* StatusMenuController.swift in Sources */,
 				63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */,
 				63E505DC1C6FEA6E003B6295 /* SunriseSunsetAPI.swift in Sources */,
