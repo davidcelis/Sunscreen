@@ -9,12 +9,8 @@
 import Cocoa
 
 class PreferencesWindow: NSWindowController {
-    static let directory = NSHomeDirectory()
-    let sunrisePath = "\(directory)/sunrise.png"
-    let morningPath = "\(directory)/morning.png"
-    let afternoonPath = "\(directory)/afternoon.png"
-    let sunsetPath = "\(directory)/sunset.png"
-    let nightPath = "\(directory)/night.png"
+    let wallpapersPath = NSHomeDirectory()
+    let fileManager = NSFileManager.defaultManager()
 
     @IBOutlet weak var sunriseImageView: NSImageView!
     @IBOutlet weak var morningImageView: NSImageView!
@@ -35,81 +31,48 @@ class PreferencesWindow: NSWindowController {
     }
 
     func loadExistingWallpapers() {
-        let fileManager = NSFileManager.defaultManager()
-
-        if fileManager.fileExistsAtPath(sunrisePath) {
-            let sunriseData = fileManager.contentsAtPath(sunrisePath)
-            sunriseImageView.image = NSImage(data: sunriseData!)
-        }
-
-        if fileManager.fileExistsAtPath(morningPath) {
-            let morningData = fileManager.contentsAtPath(morningPath)
-            morningImageView.image = NSImage(data: morningData!)
-        }
-
-        if fileManager.fileExistsAtPath(afternoonPath) {
-            let afternoonData = fileManager.contentsAtPath(afternoonPath)
-            afternoonImageView.image = NSImage(data: afternoonData!)
-        }
-
-        if fileManager.fileExistsAtPath(sunsetPath) {
-            let sunsetData = fileManager.contentsAtPath(sunsetPath)
-            sunsetImageView.image = NSImage(data: sunsetData!)
-        }
-
-        if fileManager.fileExistsAtPath(nightPath) {
-            let nightData = fileManager.contentsAtPath(nightPath)
-            nightImageView.image = NSImage(data: nightData!)
-        }
+        loadWallpaper("sunrise", imageView: sunriseImageView)
+        loadWallpaper("morning", imageView: morningImageView)
+        loadWallpaper("afternoon", imageView: afternoonImageView)
+        loadWallpaper("sunset", imageView: sunsetImageView)
+        loadWallpaper("night", imageView: nightImageView)
     }
 
     @IBAction func sunriseImageDropped(sender: NSImageView) {
-        if let image = sender.image {
-            let fileManager = NSFileManager.defaultManager()
-
-            let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
-            let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
-            fileManager.createFileAtPath(sunrisePath, contents: png, attributes: nil)
-        }
+        imageDropped(sender, name: "sunrise")
     }
 
     @IBAction func morningImageDropped(sender: NSImageView) {
-        if let image = sender.image {
-            let fileManager = NSFileManager.defaultManager()
-
-            let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
-            let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
-            fileManager.createFileAtPath(morningPath, contents: png, attributes: nil)
-        }
+        imageDropped(sender, name: "morning")
     }
 
     @IBAction func afternoonImageDropped(sender: NSImageView) {
-        if let image = sender.image {
-            let fileManager = NSFileManager.defaultManager()
-
-            let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
-            let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
-            fileManager.createFileAtPath(afternoonPath, contents: png, attributes: nil)
-        }
+        imageDropped(sender, name: "afternoon")
     }
 
     @IBAction func sunsetImageDropped(sender: NSImageView) {
-        if let image = sender.image {
-            let fileManager = NSFileManager.defaultManager()
-
-            let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
-            let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
-            fileManager.createFileAtPath(sunsetPath, contents: png, attributes: nil)
-        }
+        imageDropped(sender, name: "sunset")
     }
 
     @IBAction func nightImageDropped(sender: NSImageView) {
+        imageDropped(sender, name: "night")
+    }
+
+    private func imageDropped(sender: NSImageView, name: String) {
         if let image = sender.image {
-            let fileManager = NSFileManager.defaultManager()
+            let manager = NSFileManager.defaultManager()
 
             let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
             let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
-            fileManager.createFileAtPath(nightPath, contents: png, attributes: nil)
+            manager.createFileAtPath("\(wallpapersPath)/\(name).png", contents: png, attributes: nil)
+        }
+    }
+
+    private func loadWallpaper(name: String, imageView: NSImageView) {
+        let path = "\(wallpapersPath)/\(name)"
+        if fileManager.fileExistsAtPath(path) {
+            let data = fileManager.contentsAtPath(path)
+            imageView.image = NSImage(data: data!)
         }
     }
 }
