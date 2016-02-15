@@ -21,7 +21,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="354" height="446"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="354" height="446"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -30,7 +30,7 @@
                         <rect key="frame" x="47" y="374" width="260" height="52"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="Btq-mY-cTf">
                             <font key="font" metaFont="system" size="10"/>
-                            <string key="title">Choose wallpapers to show during various periods of the day. "Sunrise" and "Sunset are the short periods of time where the sun is actively rising or setting above or below the horizon.</string>
+                            <string key="title">Choose wallpapers to show during various periods of the day. "Sunrise" and "Sunset are the short periods of time where the sun is in the process of rising above or setting below the horizon.</string>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
