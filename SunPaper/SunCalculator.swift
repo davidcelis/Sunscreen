@@ -9,50 +9,50 @@
 import Foundation
 
 class SunCalculator {
-    static let J1970 = Double(2440588)
-    static let J2000 = Double(2451545)
-    static let deg2rad = M_PI / 180
-    static let M0 = 357.5291 * deg2rad
-    static let M1 = 0.98560028 * deg2rad
-    static let J0 = 0.0009
-    static let J1 = 0.0053
-    static let J2 = -0.0069
-    static let C1 = 1.9148 * deg2rad
-    static let C2 = 0.0200 * deg2rad
-    static let C3 = 0.0003 * deg2rad
-    static let P = 102.9372 * deg2rad
-    static let e = 23.45 * deg2rad
-    static let th0 = 280.1600 * deg2rad
-    static let th1 = 360.9856235 * deg2rad
-    static let h0 = -0.83 * deg2rad // Angle of sunset
-    static let d0 = 0.53 * deg2rad  // Diameter of the sun
-    static let h1 = -6 * deg2rad    // Angle of Civil Twilight
-    static let h2 = -12 * deg2rad   // Angle of Nautical Twilight
-    static let h3 = -18 * deg2rad   // Angle of Astronomical Twilight
-    static let secondsInDay = Double(60 * 60 * 24)
+    static let J1970 = Double(2440588),
+               J2000 = Double(2451545),
+               deg2rad = M_PI / 180,
+               M0 = 357.5291 * deg2rad,
+               M1 = 0.98560028 * deg2rad,
+               J0 = 0.0009,
+               J1 = 0.0053,
+               J2 = -0.0069,
+               C1 = 1.9148 * deg2rad,
+               C2 = 0.0200 * deg2rad,
+               C3 = 0.0003 * deg2rad,
+               P = 102.9372 * deg2rad,
+               e = 23.45 * deg2rad,
+               th0 = 280.1600 * deg2rad,
+               th1 = 360.9856235 * deg2rad,
+               h0 = -0.83 * deg2rad, // Angle of sunset
+               d0 = 0.53 * deg2rad,  // Diameter of the sun
+               h1 = -6 * deg2rad,    // Angle of Civil Twilight
+               h2 = -12 * deg2rad,   // Angle of Nautical Twilight
+               h3 = -18 * deg2rad,   // Angle of Astronomical Twilight
+               secondsInDay = Double(60 * 60 * 24)
 
-    static func calculateTimes(date: NSDate, latitude: Double, longitude: Double) -> [String:NSDate] {
-        let now = date.timeIntervalSince1970
-        let lw = -longitude * deg2rad
-        let phi = latitude * deg2rad
-        let J = dateToJulianDate(now);
+    static func calculateTimes(date: NSDate, latitude: Double, longitude: Double) -> [String:NSDate?] {
+        let now = date.timeIntervalSince1970,
+            lw = -longitude * deg2rad,
+            phi = latitude * deg2rad,
+            J = dateToJulianDate(now)
 
-        let n = getJulianCycle(J, lw: lw)
-        let Js = getApproxSolarTransit(0, lw: lw, n: n)
-        let M = getSolarMeanAnomaly(Js)
-        let C = getEquationOfCenter(M)
-        let Lsun = getEclipticLongitude(M, C: C)
-        let d = getSunDeclination(Lsun)
-        let Jtransit = getSolarTransit(Js, M: M, Lsun: Lsun)
-        let w0 = getHourAngle(h0, phi: phi, d: d)
-        let w1 = getHourAngle(h0 + d0, phi: phi, d: d)
-        let Jset = getSunsetJulianDate(w0, M: M, Lsun: Lsun, lw: lw, n: n)
-        let Jsetstart = getSunsetJulianDate(w1, M: M, Lsun: Lsun, lw: lw, n: n)
-        let Jrise = getSunriseJulianDate(Jtransit, Jset: Jset)
-        let Jriseend = getSunriseJulianDate(Jtransit, Jset: Jsetstart)
-        let w2 = getHourAngle(h1, phi: phi, d: d)
-        let Jnau = getSunsetJulianDate(w2, M: M, Lsun: Lsun, lw: lw, n: n)
-        let Jciv2 = getSunriseJulianDate(Jtransit, Jset: Jnau)
+        let n = getJulianCycle(J, lw: lw),
+            Js = getApproxSolarTransit(0, lw: lw, n: n),
+            M = getSolarMeanAnomaly(Js),
+            C = getEquationOfCenter(M),
+            Lsun = getEclipticLongitude(M, C: C),
+            d = getSunDeclination(Lsun),
+            Jtransit = getSolarTransit(Js, M: M, Lsun: Lsun),
+            w0 = getHourAngle(h0, phi: phi, d: d),
+            w1 = getHourAngle(h0 + d0, phi: phi, d: d),
+            w2 = getHourAngle(h1, phi: phi, d: d),
+            Jset = getSunsetJulianDate(w0, M: M, Lsun: Lsun, lw: lw, n: n),
+            Jsetstart = getSunsetJulianDate(w1, M: M, Lsun: Lsun, lw: lw, n: n),
+            Jrise = getSunriseJulianDate(Jtransit, Jset: Jset),
+            Jriseend = getSunriseJulianDate(Jtransit, Jset: Jsetstart),
+            Jnau = getSunsetJulianDate(w2, M: M, Lsun: Lsun, lw: lw, n: n),
+            Jciv2 = getSunriseJulianDate(Jtransit, Jset: Jnau)
 
         return [
             "dawn": julianDateToDate(Jciv2),
@@ -73,8 +73,12 @@ class SunCalculator {
         return (date / secondsInDay) - 0.5 + J1970
     }
 
-    private static func julianDateToDate(julianDate: Double) -> NSDate {
-        return NSDate(timeIntervalSince1970: (julianDate + 0.5 - J1970) * secondsInDay)
+    private static func julianDateToDate(julianDate: Double) -> NSDate? {
+        if julianDate.isNaN {
+            return nil
+        } else {
+            return NSDate(timeIntervalSince1970: (julianDate + 0.5 - J1970) * secondsInDay)
+        }
     }
 
     private static func getJulianCycle(J: Double, lw: Double) -> Double {
