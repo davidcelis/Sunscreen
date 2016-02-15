@@ -7,11 +7,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="SunPaper" customModuleProvider="target">
             <connections>
-                <outlet property="afternoonWallpaper" destination="c0g-HT-JkY" id="5CF-Gz-qzg"/>
-                <outlet property="morningWallpaper" destination="G8z-Zc-Fcj" id="ex1-LP-Wfr"/>
-                <outlet property="nightWallpaper" destination="rvT-ug-QRH" id="sQe-BZ-EWm"/>
-                <outlet property="sunriseWallpaper" destination="H4F-VR-y2u" id="Md3-6P-Hgi"/>
-                <outlet property="sunsetWallpaper" destination="Pz8-5Q-9KG" id="ULk-WX-ZU8"/>
+                <outlet property="afternoonImageView" destination="c0g-HT-JkY" id="ej9-xW-VCk"/>
+                <outlet property="morningImageView" destination="G8z-Zc-Fcj" id="iSp-tY-CZZ"/>
+                <outlet property="nightImageView" destination="rvT-ug-QRH" id="jF7-hK-ryq"/>
+                <outlet property="sunriseImageView" destination="H4F-VR-y2u" id="URg-Xp-PfK"/>
+                <outlet property="sunsetImageView" destination="Pz8-5Q-9KG" id="vuc-2L-Pfh"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -38,22 +38,37 @@
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4F-VR-y2u">
                         <rect key="frame" x="17" y="273" width="116" height="71"/>
                         <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="Hyd-4e-A5z"/>
+                        <connections>
+                            <action selector="sunriseImageDropped:" target="-2" id="6lm-Zm-6j9"/>
+                        </connections>
                     </imageView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8z-Zc-Fcj">
                         <rect key="frame" x="16" y="165" width="116" height="71"/>
                         <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="8Mg-wY-4yQ"/>
+                        <connections>
+                            <action selector="morningImageDropped:" target="-2" id="OLR-vh-tQR"/>
+                        </connections>
                     </imageView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvT-ug-QRH">
                         <rect key="frame" x="119" y="52" width="116" height="71"/>
                         <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="Iqf-Lk-SrI"/>
+                        <connections>
+                            <action selector="nightImageDropped:" target="-2" id="pNS-8a-BxB"/>
+                        </connections>
                     </imageView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pz8-5Q-9KG">
                         <rect key="frame" x="221" y="165" width="116" height="71"/>
                         <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="aho-fa-vfz"/>
+                        <connections>
+                            <action selector="sunsetImageDropped:" target="-2" id="hVd-se-5CT"/>
+                        </connections>
                     </imageView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-HT-JkY">
                         <rect key="frame" x="221" y="273" width="116" height="71"/>
                         <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="GSA-Ne-Gyk"/>
+                        <connections>
+                            <action selector="afternoonImageDropped:" target="-2" id="QXI-RE-rkT"/>
+                        </connections>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZ9-1s-Y6a">
                         <rect key="frame" x="49" y="349" width="50" height="17"/>
