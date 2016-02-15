@@ -15,7 +15,6 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     var preferencesWindow: PreferencesWindow!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
-    let sunriseSunsetAPI = SunriseSunsetAPI()
     let locationManager = CLLocationManager()
 
     override func awakeFromNib() {
@@ -55,10 +54,12 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
         let location = locations.last as! CLLocation
+        let now = NSDate()
 
-        sunriseSunsetAPI.getSunData(location.coordinate.latitude, longitude: location.coordinate.longitude) { sunData in
-            NSLog("\(sunData)")
-        }
+        let times = SunCalculator.calculateTimes(now, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+
+        NSLog("\(times)")
+
 
         locationManager.stopUpdatingLocation()
     }
