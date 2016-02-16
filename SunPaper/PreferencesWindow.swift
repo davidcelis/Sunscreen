@@ -70,6 +70,7 @@ class PreferencesWindow: NSWindowController {
 
     private func loadWallpaper(name: String, imageView: NSImageView) {
         let path = "\(wallpapersPath)/\(name)"
+
         if fileManager.fileExistsAtPath(path) {
             let data = fileManager.contentsAtPath(path)
             imageView.image = NSImage(data: data!)

@@ -55,12 +55,22 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
         locationManager.stopUpdatingLocation()
 
-        updateWallpaper(locations.last as! CLLocation)
-    }
-
-    private func updateWallpaper(location: CLLocation) {
+        let location = locations.last as! CLLocation
         let period = SunCalculator.getCurrentPeriod(location.coordinate.latitude, longitude: location.coordinate.longitude)
 
-        NSLog("It is currently \(period)")
+        setWallpaper(period)
+    }
+
+    private func setWallpaper(period: String) {
+        let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(period).png")
+
+        do {
+            let workspace = NSWorkspace.sharedWorkspace()
+            if let screen = NSScreen.mainScreen()  {
+                try workspace.setDesktopImageURL(imagePath, forScreen: screen, options: [:])
+            }
+        } catch {
+            NSLog("\(error)")
+        }
     }
 }
