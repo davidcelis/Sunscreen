@@ -57,15 +57,17 @@ class PreferencesWindow: NSWindowController {
             let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
             let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
             manager.createFileAtPath("\(wallpapersPath)/\(name).png", contents: png, attributes: nil)
+
+            NSLog("Created file: \(wallpapersPath)/\(name).png")
         }
     }
 
     private func loadWallpaper(name: String, imageView: NSImageView) {
-        let path = "\(wallpapersPath)/\(name)"
+        let path = "\(wallpapersPath)/\(name).png"
 
-        if fileManager.fileExistsAtPath(path) {
-            let data = fileManager.contentsAtPath(path)
-            imageView.image = NSImage(data: data!)
+        if let image = NSImage(byReferencingFile: path) {
+            imageView.image = image
+            NSLog("Loaded file: \(path)")
         }
     }
 }
