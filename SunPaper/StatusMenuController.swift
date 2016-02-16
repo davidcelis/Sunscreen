@@ -53,14 +53,14 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
-        let location = locations.last as! CLLocation
-        let now = NSDate()
-
-        let times = SunCalculator.calculateTimes(now, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-
-        NSLog("\(times)")
-
-
         locationManager.stopUpdatingLocation()
+
+        updateWallpaper(locations.last as! CLLocation)
+    }
+
+    private func updateWallpaper(location: CLLocation) {
+        let period = SunCalculator.getCurrentPeriod(location.coordinate.latitude, longitude: location.coordinate.longitude)
+
+        NSLog("It is currently \(period)")
     }
 }
