@@ -46,6 +46,10 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
     @IBAction func preferencesClicked(sender: NSMenuItem) {
         preferencesWindow.showWindow(nil)
+
+        preferencesWindow.window?.center()
+        preferencesWindow.window?.makeKeyAndOrderFront(nil)
+        NSApp.activateIgnoringOtherApps(true)
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {

@@ -22,14 +22,6 @@ class PreferencesWindow: NSWindowController {
         return "PreferencesWindow"
     }
 
-    override func windowDidLoad() {
-        super.windowDidLoad()
-
-        self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
-    }
-
     func loadExistingWallpapers() {
         loadWallpaper("sunrise", imageView: sunriseImageView)
         loadWallpaper("morning", imageView: morningImageView)
