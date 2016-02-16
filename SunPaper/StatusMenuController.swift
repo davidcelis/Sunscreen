@@ -38,6 +38,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         }
 
         locationManager.startUpdatingLocation()
+        showPreferences()
     }
 
     @IBAction func updateClicked(sender: NSMenuItem) {
@@ -45,11 +46,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     }
 
     @IBAction func preferencesClicked(sender: NSMenuItem) {
-        preferencesWindow.showWindow(nil)
-
-        preferencesWindow.window?.center()
-        preferencesWindow.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
+        showPreferences()
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
@@ -76,5 +73,13 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         } catch {
             NSLog("\(error)")
         }
+    }
+
+    private func showPreferences() {
+        preferencesWindow.showWindow(nil)
+
+        preferencesWindow.window?.center()
+        preferencesWindow.window?.makeKeyAndOrderFront(nil)
+        NSApp.activateIgnoringOtherApps(true)
     }
 }

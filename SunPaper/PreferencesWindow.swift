@@ -22,6 +22,10 @@ class PreferencesWindow: NSWindowController {
         return "PreferencesWindow"
     }
 
+    override func windowDidLoad() {
+        loadExistingWallpapers()
+    }
+
     func loadExistingWallpapers() {
         loadWallpaper("sunrise", imageView: sunriseImageView)
         loadWallpaper("morning", imageView: morningImageView)
