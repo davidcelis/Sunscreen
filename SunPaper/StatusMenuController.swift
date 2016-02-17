@@ -13,6 +13,8 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
 
     var preferencesWindow: PreferencesWindow!
+    var currentLocation: CLLocation?
+    var currentTimes: SunData?
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let locationManager = CLLocationManager()
@@ -37,12 +39,8 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
             NSLog("Location Services can be authorized or accessed.")
         }
 
-        locationManager.startUpdatingLocation()
+        startTimers()
         showPreferences()
-    }
-
-    @IBAction func updateClicked(sender: NSMenuItem) {
-        locationManager.startUpdatingLocation()
     }
 
     @IBAction func preferencesClicked(sender: NSMenuItem) {
@@ -56,22 +54,33 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
         locationManager.stopUpdatingLocation()
 
-        let location = locations.last as! CLLocation
-        let period = SunCalculator.getCurrentPeriod(location.coordinate.latitude, longitude: location.coordinate.longitude)
-
-        setWallpaper(period)
+        currentLocation = locations.last as? CLLocation
+        currentTimes = SunCalculator.calculateTimes(NSDate(), latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
     }
 
-    private func setWallpaper(period: String) {
-        let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(period).png")
+    private func startTimers() {
+        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
 
-        do {
-            let workspace = NSWorkspace.sharedWorkspace()
-            if let screen = NSScreen.mainScreen()  {
-                try workspace.setDesktopImageURL(imagePath, forScreen: screen, options: [:])
+        let timer = NSTimer(fireDate: currentTimes!.solarNoon, interval: 0, target: self, selector: "updateWallpaper", userInfo: nil, repeats: false)
+        NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+    }
+
+    // One looping timer to update `currentTimes`. Once per hour?
+    // One looping timer to see if the wallpaper needs to be changed
+
+    private func updateWallpaper() {
+        if let times = currentTimes {
+            let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(times.currentPeriod).png")
+
+            do {
+                let workspace = NSWorkspace.sharedWorkspace()
+                if let screen = NSScreen.mainScreen()  {
+                    try workspace.setDesktopImageURL(imagePath, forScreen: screen, options: [:])
+                }
+            } catch {
+                NSLog("\(error)")
             }
-        } catch {
-            NSLog("\(error)")
         }
     }
 

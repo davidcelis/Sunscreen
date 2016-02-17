@@ -21,12 +21,6 @@
         </customObject>
         <menu id="qBf-Pe-f00">
             <items>
-                <menuItem title="Update" id="Ta9-Le-jJB">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="updateClicked:" target="t9z-OC-K39" id="mqf-zw-w1x"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Preferences" keyEquivalent="," id="LBZ-Q6-sMv">
                     <connections>
                         <action selector="preferencesClicked:" target="t9z-OC-K39" id="Ttf-8H-Mms"/>

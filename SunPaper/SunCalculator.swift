@@ -82,7 +82,7 @@ class SunCalculator {
         }
     }
 
-    private static func calculateTimes(date: NSDate, latitude: Double, longitude: Double) -> SunData {
+    static func calculateTimes(date: NSDate, latitude: Double, longitude: Double) -> SunData {
         let now = date.timeIntervalSince1970,
         lw = -longitude * deg2rad,
         phi = latitude * deg2rad,
@@ -105,14 +105,58 @@ class SunCalculator {
         Jnau = getSunsetJulianDate(w2, M: M, Lsun: Lsun, lw: lw, n: n),
         Jciv2 = getSunriseJulianDate(Jtransit, Jset: Jnau)
 
+        let sunriseStart = julianDateToDate(Jciv2),
+            // sunriseStart = julianDateToDate(Jrise),
+            sunriseEnd = julianDateToDate(Jriseend),
+            solarNoon = julianDateToDate(Jtransit),
+            sunsetStart = julianDateToDate(Jsetstart),
+            // sunsetEnd = julianDateToDate(Jset),
+            sunsetEnd = julianDateToDate(Jnau)
+
+        var period: String?
+
+        if altitudeOfSunAtTime(date, latitude: latitude, longitude: longitude) < -6 {
+            period = "night"
+        }
+
+        switch date.compare(solarNoon!) {
+        case .OrderedAscending, .OrderedSame:
+            // We're before solar noon, so it's either sunrise or morning. If "sunriseEnd" is nil,
+            // we can return "sunrise". If it's not, we need to compare ourselves to sunriseEnd to
+            // see if we're in "sunrise" or "morning".
+            if sunriseEnd != nil {
+                switch date.compare(sunriseEnd!) {
+                case .OrderedSame, .OrderedAscending:
+                    period = "sunrise"
+                case .OrderedDescending:
+                    period = "morning"
+                }
+            } else {
+                period = "sunrise"
+            }
+        case .OrderedDescending:
+            // We're after solar noon, so it's either afternoon or sunset. If "sunsetStart" is nil,
+            // we can return "sunset". If it's not, we need to compare ourselves to sunsetStart to
+            // see if we're in "afternoon" or "sunset".
+            if sunsetStart != nil {
+                switch date.compare(sunsetStart!) {
+                case .OrderedAscending, .OrderedSame:
+                    period = "afternoon"
+                case .OrderedDescending:
+                    period = "sunset"
+                }
+            } else {
+                period = "sunset"
+            }
+        }
+
         return SunData(
-            sunriseStart: julianDateToDate(Jciv2),
-            // sunriseStart: julianDateToDate(Jrise),
-            sunriseEnd: julianDateToDate(Jriseend),
-            solarNoon: julianDateToDate(Jtransit)!,
-            sunsetStart: julianDateToDate(Jsetstart),
-            // sunsetEnd: julianDateToDate(Jset),
-            sunsetEnd: julianDateToDate(Jnau)
+            currentPeriod: period!,
+            sunriseStart: sunriseStart,
+            sunriseEnd: sunriseEnd,
+            solarNoon: solarNoon!,
+            sunsetStart: sunsetStart,
+            sunsetEnd: sunsetEnd
         )
     }
 
@@ -204,6 +248,8 @@ class SunCalculator {
 }
 
 struct SunData {
+    var currentPeriod: String
+
     var sunriseStart: NSDate?
     // var sunriseStart: NSDate?
     var sunriseEnd: NSDate?
