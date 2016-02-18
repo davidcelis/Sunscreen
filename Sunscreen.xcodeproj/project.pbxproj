@@ -39,15 +39,15 @@
 		630918761C70F9E8004F7D4B /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		630918771C70F9E8004F7D4B /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		6315A8F11C724350007769A1 /* SunCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunCalculator.swift; sourceTree = "<group>"; };
-		63E505AD1C6FD78E003B6295 /* Sunscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sunscreen.app; path = "/Users/david/Developer/Sunscreen/build/Debug/Sunscreen.app"; sourceTree = "<absolute>"; };
+		6317A9041C75ACEA00D45300 /* Sunscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sunscreen.app; path = /Users/david/Developer/Sunscreen/build/Debug/Sunscreen.app; sourceTree = "<absolute>"; };
+		6317A9051C75ACEA00D45300 /* SunscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenTests.xctest; path = /Users/david/Developer/Sunscreen/build/Debug/SunscreenTests.xctest; sourceTree = "<absolute>"; };
+		6317A9061C75ACEA00D45300 /* SunscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenUITests.xctest; path = /Users/david/Developer/Sunscreen/build/Debug/SunscreenUITests.xctest; sourceTree = "<absolute>"; };
 		63E505B01C6FD78E003B6295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E505B21C6FD78E003B6295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63E505B51C6FD78E003B6295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		63E505B71C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E505BC1C6FD78E003B6295 /* SunscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenTests.xctest; path = "/Users/david/Developer/Sunscreen/build/Debug/SunscreenTests.xctest"; sourceTree = "<absolute>"; };
 		63E505C01C6FD78E003B6295 /* SunscreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunscreenTests.swift; sourceTree = "<group>"; };
 		63E505C21C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E505C71C6FD78E003B6295 /* SunscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenUITests.xctest; path = "/Users/david/Developer/Sunscreen/build/Debug/SunscreenUITests.xctest"; sourceTree = "<absolute>"; };
 		63E505CB1C6FD78E003B6295 /* SunscreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunscreenUITests.swift; sourceTree = "<group>"; };
 		63E505CD1C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63E505D91C6FE77D003B6295 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			);
 			name = Sunscreen;
 			productName = Sunscreen;
-			productReference = 63E505AD1C6FD78E003B6295 /* Sunscreen.app */;
+			productReference = 6317A9041C75ACEA00D45300 /* Sunscreen.app */;
 			productType = "com.apple.product-type.application";
 		};
 		63E505BB1C6FD78E003B6295 /* SunscreenTests */ = {
@@ -157,7 +157,7 @@
 			);
 			name = SunscreenTests;
 			productName = SunscreenTests;
-			productReference = 63E505BC1C6FD78E003B6295 /* SunscreenTests.xctest */;
+			productReference = 6317A9051C75ACEA00D45300 /* SunscreenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		63E505C61C6FD78E003B6295 /* SunscreenUITests */ = {
@@ -175,7 +175,7 @@
 			);
 			name = SunscreenUITests;
 			productName = SunscreenUITests;
-			productReference = 63E505C71C6FD78E003B6295 /* SunscreenUITests.xctest */;
+			productReference = 6317A9061C75ACEA00D45300 /* SunscreenUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
