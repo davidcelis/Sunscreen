@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="SunPaper" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="Sunscreen" customModuleProvider="target">
             <connections>
                 <outlet property="afternoonImageView" destination="c0g-HT-JkY" id="ej9-xW-VCk"/>
                 <outlet property="morningImageView" destination="G8z-Zc-Fcj" id="iSp-tY-CZZ"/>
@@ -17,7 +17,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="SunPaper Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="Sunscreen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="354" height="446"/>
@@ -111,8 +111,8 @@
                         </textFieldCell>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZD-gD-iX3">
-                        <rect key="frame" x="96" y="18" width="162" height="18"/>
-                        <buttonCell key="cell" type="check" title="Start SunPaper at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b98-cG-Xsy">
+                        <rect key="frame" x="93" y="18" width="168" height="18"/>
+                        <buttonCell key="cell" type="check" title="Start Sunscreen at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b98-cG-Xsy">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

@@ -13,8 +13,8 @@
 		63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505B01C6FD78E003B6295 /* AppDelegate.swift */; };
 		63E505B31C6FD78E003B6295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B21C6FD78E003B6295 /* Assets.xcassets */; };
 		63E505B61C6FD78E003B6295 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B41C6FD78E003B6295 /* MainMenu.xib */; };
-		63E505C11C6FD78E003B6295 /* SunPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505C01C6FD78E003B6295 /* SunPaperTests.swift */; };
-		63E505CC1C6FD78E003B6295 /* SunPaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505CB1C6FD78E003B6295 /* SunPaperUITests.swift */; };
+		63E505C11C6FD78E003B6295 /* SunscreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505C01C6FD78E003B6295 /* SunscreenTests.swift */; };
+		63E505CC1C6FD78E003B6295 /* SunscreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505CB1C6FD78E003B6295 /* SunscreenUITests.swift */; };
 		63E505DA1C6FE77D003B6295 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505D91C6FE77D003B6295 /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,14 +24,14 @@
 			containerPortal = 63E505A51C6FD78E003B6295 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63E505AC1C6FD78E003B6295;
-			remoteInfo = SunPaper;
+			remoteInfo = Sunscreen;
 		};
 		63E505C81C6FD78E003B6295 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63E505A51C6FD78E003B6295 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63E505AC1C6FD78E003B6295;
-			remoteInfo = SunPaper;
+			remoteInfo = Sunscreen;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -39,19 +39,19 @@
 		630918761C70F9E8004F7D4B /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		630918771C70F9E8004F7D4B /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		6315A8F11C724350007769A1 /* SunCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunCalculator.swift; sourceTree = "<group>"; };
-		63E505AD1C6FD78E003B6295 /* SunPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E505AD1C6FD78E003B6295 /* Sunscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sunscreen.app; path = "/Users/david/Developer/Sunscreen/build/Debug/Sunscreen.app"; sourceTree = "<absolute>"; };
 		63E505B01C6FD78E003B6295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E505B21C6FD78E003B6295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63E505B51C6FD78E003B6295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		63E505B71C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E505BC1C6FD78E003B6295 /* SunPaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunPaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E505C01C6FD78E003B6295 /* SunPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunPaperTests.swift; sourceTree = "<group>"; };
+		63E505BC1C6FD78E003B6295 /* SunscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenTests.xctest; path = "/Users/david/Developer/Sunscreen/build/Debug/SunscreenTests.xctest"; sourceTree = "<absolute>"; };
+		63E505C01C6FD78E003B6295 /* SunscreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunscreenTests.swift; sourceTree = "<group>"; };
 		63E505C21C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E505C71C6FD78E003B6295 /* SunPaperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunPaperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E505CB1C6FD78E003B6295 /* SunPaperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunPaperUITests.swift; sourceTree = "<group>"; };
+		63E505C71C6FD78E003B6295 /* SunscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenUITests.xctest; path = "/Users/david/Developer/Sunscreen/build/Debug/SunscreenUITests.xctest"; sourceTree = "<absolute>"; };
+		63E505CB1C6FD78E003B6295 /* SunscreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunscreenUITests.swift; sourceTree = "<group>"; };
 		63E505CD1C6FD78E003B6295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63E505D91C6FE77D003B6295 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
-		74D5677F1C714A4700F9336A /* SunPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SunPaper.entitlements; sourceTree = "<group>"; };
+		74D5677F1C714A4700F9336A /* Sunscreen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Sunscreen.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,27 +82,16 @@
 		63E505A41C6FD78E003B6295 = {
 			isa = PBXGroup;
 			children = (
-				63E505AF1C6FD78E003B6295 /* SunPaper */,
-				63E505BF1C6FD78E003B6295 /* SunPaperTests */,
-				63E505CA1C6FD78E003B6295 /* SunPaperUITests */,
-				63E505AE1C6FD78E003B6295 /* Products */,
+				63E505AF1C6FD78E003B6295 /* Sunscreen */,
+				63E505BF1C6FD78E003B6295 /* SunscreenTests */,
+				63E505CA1C6FD78E003B6295 /* SunscreenUITests */,
 			);
 			sourceTree = "<group>";
 		};
-		63E505AE1C6FD78E003B6295 /* Products */ = {
+		63E505AF1C6FD78E003B6295 /* Sunscreen */ = {
 			isa = PBXGroup;
 			children = (
-				63E505AD1C6FD78E003B6295 /* SunPaper.app */,
-				63E505BC1C6FD78E003B6295 /* SunPaperTests.xctest */,
-				63E505C71C6FD78E003B6295 /* SunPaperUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		63E505AF1C6FD78E003B6295 /* SunPaper */ = {
-			isa = PBXGroup;
-			children = (
-				74D5677F1C714A4700F9336A /* SunPaper.entitlements */,
+				74D5677F1C714A4700F9336A /* Sunscreen.entitlements */,
 				63E505B01C6FD78E003B6295 /* AppDelegate.swift */,
 				6315A8F11C724350007769A1 /* SunCalculator.swift */,
 				630918761C70F9E8004F7D4B /* PreferencesWindow.swift */,
@@ -112,33 +101,33 @@
 				63E505B41C6FD78E003B6295 /* MainMenu.xib */,
 				63E505B71C6FD78E003B6295 /* Info.plist */,
 			);
-			path = SunPaper;
+			path = Sunscreen;
 			sourceTree = "<group>";
 		};
-		63E505BF1C6FD78E003B6295 /* SunPaperTests */ = {
+		63E505BF1C6FD78E003B6295 /* SunscreenTests */ = {
 			isa = PBXGroup;
 			children = (
-				63E505C01C6FD78E003B6295 /* SunPaperTests.swift */,
+				63E505C01C6FD78E003B6295 /* SunscreenTests.swift */,
 				63E505C21C6FD78E003B6295 /* Info.plist */,
 			);
-			path = SunPaperTests;
+			path = SunscreenTests;
 			sourceTree = "<group>";
 		};
-		63E505CA1C6FD78E003B6295 /* SunPaperUITests */ = {
+		63E505CA1C6FD78E003B6295 /* SunscreenUITests */ = {
 			isa = PBXGroup;
 			children = (
-				63E505CB1C6FD78E003B6295 /* SunPaperUITests.swift */,
+				63E505CB1C6FD78E003B6295 /* SunscreenUITests.swift */,
 				63E505CD1C6FD78E003B6295 /* Info.plist */,
 			);
-			path = SunPaperUITests;
+			path = SunscreenUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		63E505AC1C6FD78E003B6295 /* SunPaper */ = {
+		63E505AC1C6FD78E003B6295 /* Sunscreen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaper" */;
+			buildConfigurationList = 63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "Sunscreen" */;
 			buildPhases = (
 				63E505A91C6FD78E003B6295 /* Sources */,
 				63E505AA1C6FD78E003B6295 /* Frameworks */,
@@ -148,14 +137,14 @@
 			);
 			dependencies = (
 			);
-			name = SunPaper;
-			productName = SunPaper;
-			productReference = 63E505AD1C6FD78E003B6295 /* SunPaper.app */;
+			name = Sunscreen;
+			productName = Sunscreen;
+			productReference = 63E505AD1C6FD78E003B6295 /* Sunscreen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		63E505BB1C6FD78E003B6295 /* SunPaperTests */ = {
+		63E505BB1C6FD78E003B6295 /* SunscreenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperTests" */;
+			buildConfigurationList = 63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunscreenTests" */;
 			buildPhases = (
 				63E505B81C6FD78E003B6295 /* Sources */,
 				63E505B91C6FD78E003B6295 /* Frameworks */,
@@ -166,14 +155,14 @@
 			dependencies = (
 				63E505BE1C6FD78E003B6295 /* PBXTargetDependency */,
 			);
-			name = SunPaperTests;
-			productName = SunPaperTests;
-			productReference = 63E505BC1C6FD78E003B6295 /* SunPaperTests.xctest */;
+			name = SunscreenTests;
+			productName = SunscreenTests;
+			productReference = 63E505BC1C6FD78E003B6295 /* SunscreenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		63E505C61C6FD78E003B6295 /* SunPaperUITests */ = {
+		63E505C61C6FD78E003B6295 /* SunscreenUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperUITests" */;
+			buildConfigurationList = 63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunscreenUITests" */;
 			buildPhases = (
 				63E505C31C6FD78E003B6295 /* Sources */,
 				63E505C41C6FD78E003B6295 /* Frameworks */,
@@ -184,9 +173,9 @@
 			dependencies = (
 				63E505C91C6FD78E003B6295 /* PBXTargetDependency */,
 			);
-			name = SunPaperUITests;
-			productName = SunPaperUITests;
-			productReference = 63E505C71C6FD78E003B6295 /* SunPaperUITests.xctest */;
+			name = SunscreenUITests;
+			productName = SunscreenUITests;
+			productReference = 63E505C71C6FD78E003B6295 /* SunscreenUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "SunPaper" */;
+			buildConfigurationList = 63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "Sunscreen" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -227,13 +216,13 @@
 				Base,
 			);
 			mainGroup = 63E505A41C6FD78E003B6295;
-			productRefGroup = 63E505AE1C6FD78E003B6295 /* Products */;
+			productRefGroup = 63E505A41C6FD78E003B6295;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63E505AC1C6FD78E003B6295 /* SunPaper */,
-				63E505BB1C6FD78E003B6295 /* SunPaperTests */,
-				63E505C61C6FD78E003B6295 /* SunPaperUITests */,
+				63E505AC1C6FD78E003B6295 /* Sunscreen */,
+				63E505BB1C6FD78E003B6295 /* SunscreenTests */,
+				63E505C61C6FD78E003B6295 /* SunscreenUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -281,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E505C11C6FD78E003B6295 /* SunPaperTests.swift in Sources */,
+				63E505C11C6FD78E003B6295 /* SunscreenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E505CC1C6FD78E003B6295 /* SunPaperUITests.swift in Sources */,
+				63E505CC1C6FD78E003B6295 /* SunscreenUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +287,12 @@
 /* Begin PBXTargetDependency section */
 		63E505BE1C6FD78E003B6295 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63E505AC1C6FD78E003B6295 /* SunPaper */;
+			target = 63E505AC1C6FD78E003B6295 /* Sunscreen */;
 			targetProxy = 63E505BD1C6FD78E003B6295 /* PBXContainerItemProxy */;
 		};
 		63E505C91C6FD78E003B6295 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63E505AC1C6FD78E003B6295 /* SunPaper */;
+			target = 63E505AC1C6FD78E003B6295 /* Sunscreen */;
 			targetProxy = 63E505C81C6FD78E003B6295 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -404,13 +393,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SunPaper/SunPaper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sunscreen/Sunscreen.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SunPaper/Info.plist;
+				INFOPLIST_FILE = Sunscreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.Sunscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -420,13 +409,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SunPaper/SunPaper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sunscreen/Sunscreen.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SunPaper/Info.plist;
+				INFOPLIST_FILE = Sunscreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.Sunscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -437,11 +426,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SunPaperTests/Info.plist;
+				INFOPLIST_FILE = SunscreenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunscreenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunPaper.app/Contents/MacOS/SunPaper";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sunscreen.app/Contents/MacOS/Sunscreen";
 			};
 			name = Debug;
 		};
@@ -450,11 +439,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SunPaperTests/Info.plist;
+				INFOPLIST_FILE = SunscreenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunscreenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunPaper.app/Contents/MacOS/SunPaper";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sunscreen.app/Contents/MacOS/Sunscreen";
 			};
 			name = Release;
 		};
@@ -462,11 +451,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SunPaperUITests/Info.plist;
+				INFOPLIST_FILE = SunscreenUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunscreenUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SunPaper;
+				TEST_TARGET_NAME = Sunscreen;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
@@ -475,11 +464,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SunPaperUITests/Info.plist;
+				INFOPLIST_FILE = SunscreenUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunPaperUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunscreenUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SunPaper;
+				TEST_TARGET_NAME = Sunscreen;
 				USES_XCTRUNNER = YES;
 			};
 			name = Release;
@@ -487,7 +476,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "SunPaper" */ = {
+		63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "Sunscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E505CE1C6FD78E003B6295 /* Debug */,
@@ -496,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaper" */ = {
+		63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "Sunscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E505D11C6FD78E003B6295 /* Debug */,
@@ -505,7 +494,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperTests" */ = {
+		63E505D31C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunscreenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E505D41C6FD78E003B6295 /* Debug */,
@@ -514,7 +503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunPaperUITests" */ = {
+		63E505D61C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "SunscreenUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E505D71C6FD78E003B6295 /* Debug */,

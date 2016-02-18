@@ -1,6 +1,6 @@
 //
 //  StatusMenuController.swift
-//  SunPaper
+//  Sunscreen
 //
 //  Created by David Celis on 2/13/16.
 //  Copyright © 2016 David Celis. All rights reserved.
@@ -32,7 +32,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
         switch CLLocationManager.authorizationStatus() {
         case .Denied:
-            NSLog("You denied Location Services access to SunPaper. Please allow access in System Preferences.")
+            NSLog("You denied Location Services access to Sunscreen. Please allow access in System Preferences.")
         case .Restricted:
             NSLog("You aren't allowed to use Location Services.")
         default:

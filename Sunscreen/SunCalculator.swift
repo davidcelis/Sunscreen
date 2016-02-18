@@ -1,6 +1,6 @@
 //
 //  SunCalculator.swift
-//  SunPaper
+//  Sunscreen
 //
 //  Created by David Celis on 2/15/16.
 //  Copyright © 2016 David Celis. All rights reserved.

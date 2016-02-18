@@ -1,15 +1,15 @@
 //
-//  SunPaperTests.swift
-//  SunPaperTests
+//  SunscreenTests.swift
+//  SunscreenTests
 //
 //  Created by David Celis on 2/13/16.
 //  Copyright © 2016 David Celis. All rights reserved.
 //
 
 import XCTest
-@testable import SunPaper
+@testable import Sunscreen
 
-class SunPaperTests: XCTestCase {
+class SunscreenTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
