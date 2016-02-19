@@ -15,13 +15,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     var preferencesWindow: PreferencesWindow!
 
     var currentLocation: CLLocation?
-    var mainTimer: NSTimer?
-
-    var sunriseTimer: NSTimer?
-    var morningTimer: NSTimer?
-    var afternoonTimer: NSTimer?
-    var sunsetTimer: NSTimer?
-    var nightTimer: NSTimer?
+    var timer: NSTimer?
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let locationManager = CLLocationManager()
@@ -39,9 +33,9 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
         switch CLLocationManager.authorizationStatus() {
         case .Denied:
-            NSLog("You denied Location Services access to Sunscreen. Please allow access in System Preferences.")
+            showLocationServicesErrorForStatus(CLAuthorizationStatus.Denied)
         case .Restricted:
-            NSLog("You aren't allowed to use Location Services.")
+            showLocationServicesErrorForStatus(CLAuthorizationStatus.Restricted)
         default:
             NSLog("Location Services can be authorized or accessed.")
         }
@@ -65,82 +59,44 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
         currentLocation = locations.last as? CLLocation
 
-        if mainTimer == nil {
-            mainTimer = NSTimer(timeInterval: 60, target: self, selector: Selector("updateTimers"), userInfo: nil, repeats: true)
-            NSRunLoop.mainRunLoop().addTimer(mainTimer!, forMode: NSRunLoopCommonModes)
-
-            // Set the wallpaper for the first time
-            let times = SunCalculator.calculateTimes(NSDate(), latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
-            setWallpaper(times.currentPeriod)
+        if timer == nil {
+            timer = NSTimer(fireDate: NSDate(), interval: 60, target: self, selector: Selector("updateWallpaper"), userInfo: nil, repeats: true)
+            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         }
     }
 
-    func updateTimers() {
-        let times = SunCalculator.calculateTimes(NSDate(), latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude),
-            noon = times.solarNoon,
-            now = NSDate()
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        locationManager.stopUpdatingLocation()
 
-        // If sunrise is going to start but not end:
-        //   * Set the sunriseTimer to times.sunriseStart
-        //   * Set the sunsetTimer to times.solarNoon
-        //   * set the nightTimer to times.sunsetEnd
-        //
-        // If sunrise is going to finish:
-        //   * Set the sunriseTimer to times.sunriseStart
-        //   * Set the morningTimer to times.sunriseEnd
-        //   * Set the afternoonTimer to times.solarNoon
-        //   * Set the sunsetTimer to times.sunsetStart
-        //   * Set the nightTimer to times.sunsetEnd
-        //
-        // Otherwise... It's just gonna keep being night so oh well ¯\_(ツ)_/¯
+        let alert = NSAlert()
 
-        if let sunriseStart = times.sunriseStart {
-            if sunriseTimer == nil && sunriseStart.compare(now) == .OrderedDescending {
-                NSLog("Setting sunriseTimer to \(sunriseStart)")
-                sunriseTimer = NSTimer(fireDate: sunriseStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunrise", repeats: false)
-                NSRunLoop.mainRunLoop().addTimer(sunriseTimer!, forMode: NSRunLoopCommonModes)
-            }
+        alert.messageText = "Location Unavailable"
+        alert.informativeText = "Sunscreen requires your current location to calculate sunrise and sunset times, but we weren't able to get your location. Sorry about that!"
+        alert.addButtonWithTitle("OK")
 
-            // If the sunrise ends and we enter morning, we can set everything else.
-            if let sunriseEnd = times.sunriseEnd {
-                if morningTimer == nil && sunriseEnd.compare(now) == .OrderedDescending {
-                    NSLog("Setting morningTimer to \(sunriseEnd)")
-                    morningTimer = NSTimer(fireDate: sunriseEnd, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "morning", repeats: false)
-                    NSRunLoop.mainRunLoop().addTimer(morningTimer!, forMode: NSRunLoopCommonModes)
-                }
+        alert.runModal()
+    }
 
-                if afternoonTimer == nil && noon.compare(now) == .OrderedDescending {
-                    NSLog("Setting afternoonTimer to \(noon)")
-                    afternoonTimer = NSTimer(fireDate: noon, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "afternoon", repeats: false)
-                    NSRunLoop.mainRunLoop().addTimer(afternoonTimer!, forMode: NSRunLoopCommonModes)
-                }
-
-                let sunsetStart = times.sunsetStart!
-                if sunsetTimer == nil && sunsetStart.compare(now) == .OrderedDescending {
-                    NSLog("Setting sunsetTimer to \(sunsetStart)")
-                    sunsetTimer = NSTimer(fireDate: sunsetStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunset", repeats: false)
-                    NSRunLoop.mainRunLoop().addTimer(sunsetTimer!, forMode: NSRunLoopCommonModes)
-                }
-            }
-
-            let sunsetEnd = times.sunsetEnd!
-            if nightTimer == nil && sunsetEnd.compare(now) == .OrderedDescending {
-                NSLog("Setting nightTimer to \(sunsetEnd)")
-                nightTimer = NSTimer(fireDate: sunsetEnd, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "night", repeats: false)
-                NSRunLoop.mainRunLoop().addTimer(nightTimer!, forMode: NSRunLoopCommonModes)
-            }
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch status {
+        case .Restricted, .Denied:
+            showLocationServicesErrorForStatus(status)
+        default:
+            return
         }
     }
 
-    func setWallpaper(timer: NSTimer) {
-        let period = timer.userInfo as! String
+    func updateWallpaper() {
+        let times = SunCalculator.calculateTimes(NSDate(), latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
 
-        setWallpaper(period)
+        NSLog("It's \(times.currentPeriod)! Setting wallpaper.")
+
+        setWallpaper(times.currentPeriod)
     }
 
     private func setWallpaper(period: String) {
         let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(period).png")
-        NSLog("Setting wallpaper to \(period)")
+
         do {
             let workspace = NSWorkspace.sharedWorkspace()
             if let screen = NSScreen.mainScreen()  {
@@ -157,5 +113,25 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         preferencesWindow.window?.center()
         preferencesWindow.window?.makeKeyAndOrderFront(nil)
         NSApp.activateIgnoringOtherApps(true)
+    }
+
+    private func showLocationServicesErrorForStatus(authorizationStatus: CLAuthorizationStatus) {
+        let alert = NSAlert()
+
+        switch authorizationStatus {
+        case .Denied:
+            alert.messageText = "Location Services Access Denied"
+            alert.informativeText = "Sunscreen requires your current location to calculate sunrise and sunset times, but you denied access. Please open System Preferences to enable Location Services, and then re-open Sunscreen."
+        case .Restricted:
+            alert.messageText = "Location Services Access Restricted"
+            alert.messageText = "Sunscreen requires Location Services access, but your account is restricted. Please contact a system administrator. Sunscreen will now exit."
+        default:
+            return
+        }
+
+        alert.addButtonWithTitle("OK")
+        if alert.runModal() == NSAlertFirstButtonReturn {
+            NSApp.terminate(nil)
+        }
     }
 }

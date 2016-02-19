@@ -74,12 +74,21 @@ class PreferencesWindow: NSWindowController {
     }
 
     private func imageDropped(sender: NSImageView, name: String) {
-        if let image = sender.image {
-            let manager = NSFileManager.defaultManager()
+        let manager = NSFileManager.defaultManager(),
+            path = "\(wallpapersPath)/\(name).png"
 
+        if let image = sender.image {
+            NSLog("Image added")
             let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
             let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
-            manager.createFileAtPath("\(wallpapersPath)/\(name).png", contents: png, attributes: nil)
+            manager.createFileAtPath(path, contents: png, attributes: nil)
+        } else {
+            NSLog("Image removed")
+            do {
+                try manager.removeItemAtPath(path)
+            } catch {
+                NSLog("\(error)")
+            }
         }
     }
 
