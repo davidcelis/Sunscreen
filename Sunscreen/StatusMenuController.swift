@@ -89,8 +89,6 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     func updateWallpaper() {
         let times = SunCalculator.calculateTimes(NSDate(), latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
 
-        NSLog("It's \(times.currentPeriod)! Setting wallpaper.")
-
         setWallpaper(times.currentPeriod)
     }
 
@@ -99,8 +97,11 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
         do {
             let workspace = NSWorkspace.sharedWorkspace()
-            if let screen = NSScreen.mainScreen()  {
-                try workspace.setDesktopImageURL(imagePath, forScreen: screen, options: [:])
+
+            if let screens = NSScreen.screens() {
+                for screen in screens {
+                    try workspace.setDesktopImageURL(imagePath, forScreen: screen, options: [:])
+                }
             }
         } catch {
             NSLog("\(error)")
