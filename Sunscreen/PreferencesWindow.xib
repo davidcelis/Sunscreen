@@ -10,6 +10,8 @@
                 <outlet property="afternoonImageView" destination="c0g-HT-JkY" id="ej9-xW-VCk"/>
                 <outlet property="morningImageView" destination="G8z-Zc-Fcj" id="iSp-tY-CZZ"/>
                 <outlet property="nightImageView" destination="rvT-ug-QRH" id="jF7-hK-ryq"/>
+                <outlet property="startAtLoginButton" destination="CZD-gD-iX3" id="5bB-Hh-tl0"/>
+                <outlet property="startAtLoginClicked" destination="CZD-gD-iX3" id="dym-Gi-HMd"/>
                 <outlet property="sunriseImageView" destination="H4F-VR-y2u" id="URg-Xp-PfK"/>
                 <outlet property="sunsetImageView" destination="Pz8-5Q-9KG" id="vuc-2L-Pfh"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -101,6 +103,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="startAtLoginClicked:" target="-2" id="FHa-Eg-ioa"/>
+                        </connections>
                     </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-HT-JkY">
                         <rect key="frame" x="17" y="165" width="116" height="71"/>

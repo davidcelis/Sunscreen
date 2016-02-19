@@ -10,6 +10,12 @@
 		630918781C70F9E8004F7D4B /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630918761C70F9E8004F7D4B /* PreferencesWindow.swift */; };
 		630918791C70F9E8004F7D4B /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630918771C70F9E8004F7D4B /* PreferencesWindow.xib */; };
 		6315A8F21C724350007769A1 /* SunCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6315A8F11C724350007769A1 /* SunCalculator.swift */; };
+		636692631C76DEA600DEA647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636692621C76DEA600DEA647 /* AppDelegate.swift */; };
+		636692651C76DEA600DEA647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636692641C76DEA600DEA647 /* Assets.xcassets */; };
+		636692681C76DEA600DEA647 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636692661C76DEA600DEA647 /* MainMenu.xib */; };
+		6366926F1C76DF2E00DEA647 /* SunscreenLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 636692601C76DEA600DEA647 /* SunscreenLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		636692711C76DF7300DEA647 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636692701C76DF7300DEA647 /* Cocoa.framework */; };
+		636692731C76DF7B00DEA647 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636692721C76DF7B00DEA647 /* ServiceManagement.framework */; };
 		63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E505B01C6FD78E003B6295 /* AppDelegate.swift */; };
 		63E505B31C6FD78E003B6295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B21C6FD78E003B6295 /* Assets.xcassets */; };
 		63E505B61C6FD78E003B6295 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E505B41C6FD78E003B6295 /* MainMenu.xib */; };
@@ -35,6 +41,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6366926E1C76DF1700DEA647 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				6366926F1C76DF2E00DEA647 /* SunscreenLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		630918761C70F9E8004F7D4B /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		630918771C70F9E8004F7D4B /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
@@ -42,6 +61,14 @@
 		636692591C769CDE00DEA647 /* Sunscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sunscreen.app; path = /Users/david/Developer/Sunscreen/build/Debug/Sunscreen.app; sourceTree = "<absolute>"; };
 		6366925A1C769CDE00DEA647 /* SunscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenTests.xctest; path = /Users/david/Developer/Sunscreen/build/Debug/SunscreenTests.xctest; sourceTree = "<absolute>"; };
 		6366925B1C769CDE00DEA647 /* SunscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SunscreenUITests.xctest; path = /Users/david/Developer/Sunscreen/build/Debug/SunscreenUITests.xctest; sourceTree = "<absolute>"; };
+		636692601C76DEA600DEA647 /* SunscreenLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunscreenLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		636692621C76DEA600DEA647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		636692641C76DEA600DEA647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		636692671C76DEA600DEA647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		636692691C76DEA600DEA647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6366926D1C76DEBE00DEA647 /* SunscreenLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SunscreenLauncher.entitlements; sourceTree = "<group>"; };
+		636692701C76DF7300DEA647 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		636692721C76DF7B00DEA647 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		63E505B01C6FD78E003B6295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E505B21C6FD78E003B6295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63E505B51C6FD78E003B6295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -55,6 +82,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6366925D1C76DEA600DEA647 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636692731C76DF7B00DEA647 /* ServiceManagement.framework in Frameworks */,
+				636692711C76DF7300DEA647 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63E505AA1C6FD78E003B6295 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,12 +115,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		636692611C76DEA600DEA647 /* SunscreenLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				6366926D1C76DEBE00DEA647 /* SunscreenLauncher.entitlements */,
+				636692621C76DEA600DEA647 /* AppDelegate.swift */,
+				636692641C76DEA600DEA647 /* Assets.xcassets */,
+				636692661C76DEA600DEA647 /* MainMenu.xib */,
+				636692691C76DEA600DEA647 /* Info.plist */,
+			);
+			path = SunscreenLauncher;
+			sourceTree = "<group>";
+		};
 		63E505A41C6FD78E003B6295 = {
 			isa = PBXGroup;
 			children = (
+				636692721C76DF7B00DEA647 /* ServiceManagement.framework */,
+				636692701C76DF7300DEA647 /* Cocoa.framework */,
 				63E505AF1C6FD78E003B6295 /* Sunscreen */,
 				63E505BF1C6FD78E003B6295 /* SunscreenTests */,
 				63E505CA1C6FD78E003B6295 /* SunscreenUITests */,
+				636692601C76DEA600DEA647 /* SunscreenLauncher.app */,
+				636692611C76DEA600DEA647 /* SunscreenLauncher */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +177,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6366925F1C76DEA600DEA647 /* SunscreenLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6366926A1C76DEA600DEA647 /* Build configuration list for PBXNativeTarget "SunscreenLauncher" */;
+			buildPhases = (
+				6366925C1C76DEA600DEA647 /* Sources */,
+				6366925D1C76DEA600DEA647 /* Frameworks */,
+				6366925E1C76DEA600DEA647 /* Resources */,
+				6366926E1C76DF1700DEA647 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunscreenLauncher;
+			productName = SunscreenLauncher;
+			productReference = 636692601C76DEA600DEA647 /* SunscreenLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		63E505AC1C6FD78E003B6295 /* Sunscreen */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63E505D01C6FD78E003B6295 /* Build configuration list for PBXNativeTarget "Sunscreen" */;
@@ -188,6 +258,15 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "David Celis";
 				TargetAttributes = {
+					6366925F1C76DEA600DEA647 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5X6BKUZDDL;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					63E505AC1C6FD78E003B6295 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 5X6BKUZDDL;
@@ -223,11 +302,21 @@
 				63E505AC1C6FD78E003B6295 /* Sunscreen */,
 				63E505BB1C6FD78E003B6295 /* SunscreenTests */,
 				63E505C61C6FD78E003B6295 /* SunscreenUITests */,
+				6366925F1C76DEA600DEA647 /* SunscreenLauncher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6366925E1C76DEA600DEA647 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636692651C76DEA600DEA647 /* Assets.xcassets in Resources */,
+				636692681C76DEA600DEA647 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63E505AB1C6FD78E003B6295 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +344,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6366925C1C76DEA600DEA647 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636692631C76DEA600DEA647 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63E505A91C6FD78E003B6295 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +395,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		636692661C76DEA600DEA647 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				636692671C76DEA600DEA647 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		63E505B41C6FD78E003B6295 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -309,6 +414,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6366926B1C76DEA600DEA647 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SunscreenLauncher/SunscreenLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunscreenLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunscreenLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6366926C1C76DEA600DEA647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SunscreenLauncher/SunscreenLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SunscreenLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidcelis.SunscreenLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		63E505CE1C6FD78E003B6295 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -476,6 +611,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6366926A1C76DEA600DEA647 /* Build configuration list for PBXNativeTarget "SunscreenLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6366926B1C76DEA600DEA647 /* Debug */,
+				6366926C1C76DEA600DEA647 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		63E505A81C6FD78E003B6295 /* Build configuration list for PBXProject "Sunscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

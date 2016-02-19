@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class PreferencesWindow: NSWindowController {
     let wallpapersPath = NSHomeDirectory()
@@ -17,6 +18,7 @@ class PreferencesWindow: NSWindowController {
     @IBOutlet weak var afternoonImageView: NSImageView!
     @IBOutlet weak var sunsetImageView: NSImageView!
     @IBOutlet weak var nightImageView: NSImageView!
+    @IBOutlet weak var startAtLoginButton: NSButton!
 
     override var windowNibName: String! {
         return "PreferencesWindow"
@@ -52,6 +54,23 @@ class PreferencesWindow: NSWindowController {
 
     @IBAction func nightImageDropped(sender: NSImageView) {
         imageDropped(sender, name: "night")
+    }
+
+    @IBAction func startAtLoginClicked(sender: NSButton) {
+        let identifier = "com.davidcelis.SunscreenLauncher",
+            defaults = NSUserDefaults.standardUserDefaults()
+
+        switch sender.state {
+        case 1:
+            defaults.setValue(true, forKey: "launchAtLogin")
+            SMLoginItemSetEnabled(identifier, true)
+        case 0:
+            defaults.setValue(false, forKey: "launchAtLogin")
+            SMLoginItemSetEnabled(identifier, false)
+        default:
+            defaults.setValue(false, forKey: "launchAtLogin")
+            SMLoginItemSetEnabled(identifier, false)
+        }
     }
 
     private func imageDropped(sender: NSImageView, name: String) {
