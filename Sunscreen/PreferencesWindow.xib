@@ -10,8 +10,7 @@
                 <outlet property="afternoonImageView" destination="c0g-HT-JkY" id="ej9-xW-VCk"/>
                 <outlet property="morningImageView" destination="G8z-Zc-Fcj" id="iSp-tY-CZZ"/>
                 <outlet property="nightImageView" destination="rvT-ug-QRH" id="jF7-hK-ryq"/>
-                <outlet property="startAtLoginButton" destination="CZD-gD-iX3" id="5bB-Hh-tl0"/>
-                <outlet property="startAtLoginClicked" destination="CZD-gD-iX3" id="dym-Gi-HMd"/>
+                <outlet property="startAtLoginButton" destination="CZD-gD-iX3" id="YYA-Si-eU1"/>
                 <outlet property="sunriseImageView" destination="H4F-VR-y2u" id="URg-Xp-PfK"/>
                 <outlet property="sunsetImageView" destination="Pz8-5Q-9KG" id="vuc-2L-Pfh"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>

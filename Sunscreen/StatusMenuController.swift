@@ -75,7 +75,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    private func updateTimers() {
+    func updateTimers() {
         let times = SunCalculator.calculateTimes(NSDate(), latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude),
             noon = times.solarNoon,
             now = NSDate()
@@ -95,32 +95,37 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         // Otherwise... It's just gonna keep being night so oh well ¯\_(ツ)_/¯
 
         if let sunriseStart = times.sunriseStart {
-            if sunriseTimer == nil && sunriseStart.compare(now) == .OrderedAscending {
+            if sunriseTimer == nil && sunriseStart.compare(now) == .OrderedDescending {
+                NSLog("Setting sunriseTimer to \(sunriseStart)")
                 sunriseTimer = NSTimer(fireDate: sunriseStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunrise", repeats: false)
                 NSRunLoop.mainRunLoop().addTimer(sunriseTimer!, forMode: NSRunLoopCommonModes)
             }
 
             // If the sunrise ends and we enter morning, we can set everything else.
             if let sunriseEnd = times.sunriseEnd {
-                if morningTimer == nil && sunriseEnd.compare(now) == .OrderedAscending {
+                if morningTimer == nil && sunriseEnd.compare(now) == .OrderedDescending {
+                    NSLog("Setting morningTimer to \(sunriseEnd)")
                     morningTimer = NSTimer(fireDate: sunriseEnd, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "morning", repeats: false)
                     NSRunLoop.mainRunLoop().addTimer(morningTimer!, forMode: NSRunLoopCommonModes)
                 }
 
-                if afternoonTimer == nil && noon.compare(now) == .OrderedAscending {
+                if afternoonTimer == nil && noon.compare(now) == .OrderedDescending {
+                    NSLog("Setting afternoonTimer to \(noon)")
                     afternoonTimer = NSTimer(fireDate: noon, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "afternoon", repeats: false)
                     NSRunLoop.mainRunLoop().addTimer(afternoonTimer!, forMode: NSRunLoopCommonModes)
                 }
 
                 let sunsetStart = times.sunsetStart!
-                if sunsetTimer == nil && sunsetStart.compare(now) == .OrderedAscending {
-                    afternoonTimer = NSTimer(fireDate: sunsetStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunset", repeats: false)
+                if sunsetTimer == nil && sunsetStart.compare(now) == .OrderedDescending {
+                    NSLog("Setting sunsetTimer to \(sunsetStart)")
+                    sunsetTimer = NSTimer(fireDate: sunsetStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunset", repeats: false)
                     NSRunLoop.mainRunLoop().addTimer(sunsetTimer!, forMode: NSRunLoopCommonModes)
                 }
             }
 
             let sunsetEnd = times.sunsetEnd!
-            if nightTimer == nil && sunsetEnd.compare(now) == .OrderedAscending {
+            if nightTimer == nil && sunsetEnd.compare(now) == .OrderedDescending {
+                NSLog("Setting nightTimer to \(sunsetEnd)")
                 nightTimer = NSTimer(fireDate: sunsetEnd, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "night", repeats: false)
                 NSRunLoop.mainRunLoop().addTimer(nightTimer!, forMode: NSRunLoopCommonModes)
             }
@@ -130,16 +135,12 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     func setWallpaper(timer: NSTimer) {
         let period = timer.userInfo as! String
 
-        NSLog("Attempting to set wallpaper to \(period)...")
-
         setWallpaper(period)
     }
 
     private func setWallpaper(period: String) {
         let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(period).png")
-
-        NSLog("Setting wallpaper to \(period)...")
-
+        NSLog("Setting wallpaper to \(period)")
         do {
             let workspace = NSWorkspace.sharedWorkspace()
             if let screen = NSScreen.mainScreen()  {

@@ -80,8 +80,6 @@ class PreferencesWindow: NSWindowController {
             let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
             let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
             manager.createFileAtPath("\(wallpapersPath)/\(name).png", contents: png, attributes: nil)
-
-            NSLog("Created file: \(wallpapersPath)/\(name).png")
         }
     }
 
@@ -90,7 +88,6 @@ class PreferencesWindow: NSWindowController {
 
         if let image = NSImage(byReferencingFile: path) {
             imageView.image = image
-            NSLog("Loaded file: \(path)")
         }
     }
 }
