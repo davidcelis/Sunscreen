@@ -43,7 +43,7 @@
                         </connections>
                     </imageView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8z-Zc-Fcj">
-                        <rect key="frame" x="16" y="165" width="116" height="71"/>
+                        <rect key="frame" x="221" y="273" width="116" height="71"/>
                         <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="8Mg-wY-4yQ"/>
                         <connections>
                             <action selector="morningImageDropped:" target="-2" id="OLR-vh-tQR"/>
@@ -63,13 +63,6 @@
                             <action selector="sunsetImageDropped:" target="-2" id="hVd-se-5CT"/>
                         </connections>
                     </imageView>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-HT-JkY">
-                        <rect key="frame" x="221" y="273" width="116" height="71"/>
-                        <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="GSA-Ne-Gyk"/>
-                        <connections>
-                            <action selector="afternoonImageDropped:" target="-2" id="QXI-RE-rkT"/>
-                        </connections>
-                    </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZ9-1s-Y6a">
                         <rect key="frame" x="49" y="349" width="50" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sunrise" id="Yoy-BZ-KIi">
@@ -79,7 +72,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-ql-lh9">
-                        <rect key="frame" x="47" y="241" width="54" height="17"/>
+                        <rect key="frame" x="252" y="349" width="54" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Morning" id="ot9-HL-oNt">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -102,14 +95,6 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-uL-Tvz">
-                        <rect key="frame" x="247" y="349" width="65" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Afternoon" id="nPA-H1-5Zi">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZD-gD-iX3">
                         <rect key="frame" x="93" y="18" width="168" height="18"/>
                         <buttonCell key="cell" type="check" title="Start Sunscreen at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b98-cG-Xsy">
@@ -117,6 +102,21 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-HT-JkY">
+                        <rect key="frame" x="17" y="165" width="116" height="71"/>
+                        <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="GSA-Ne-Gyk"/>
+                        <connections>
+                            <action selector="afternoonImageDropped:" target="-2" id="QXI-RE-rkT"/>
+                        </connections>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-uL-Tvz">
+                        <rect key="frame" x="43" y="241" width="65" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Afternoon" id="nPA-H1-5Zi">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>
