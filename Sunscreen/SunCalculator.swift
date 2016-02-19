@@ -72,36 +72,36 @@ class SunCalculator {
 
         if altitudeOfSunAtTime(date, latitude: latitude, longitude: longitude) < -6 {
             period = "night"
-        }
-
-        switch date.compare(solarNoon!) {
-        case .OrderedAscending, .OrderedSame:
-            // We're before solar noon, so it's either sunrise or morning. If "sunriseEnd" is nil,
-            // we can return "sunrise". If it's not, we need to compare ourselves to sunriseEnd to
-            // see if we're in "sunrise" or "morning".
-            if sunriseEnd != nil {
-                switch date.compare(sunriseEnd!) {
-                case .OrderedSame, .OrderedAscending:
+        } else {
+            switch date.compare(solarNoon!) {
+            case .OrderedAscending, .OrderedSame:
+                // We're before solar noon, so it's either sunrise or morning. If "sunriseEnd" is nil,
+                // we can return "sunrise". If it's not, we need to compare ourselves to sunriseEnd to
+                // see if we're in "sunrise" or "morning".
+                if sunriseEnd != nil {
+                    switch date.compare(sunriseEnd!) {
+                    case .OrderedSame, .OrderedAscending:
+                        period = "sunrise"
+                    case .OrderedDescending:
+                        period = "morning"
+                    }
+                } else {
                     period = "sunrise"
-                case .OrderedDescending:
-                    period = "morning"
                 }
-            } else {
-                period = "sunrise"
-            }
-        case .OrderedDescending:
-            // We're after solar noon, so it's either afternoon or sunset. If "sunsetStart" is nil,
-            // we can return "sunset". If it's not, we need to compare ourselves to sunsetStart to
-            // see if we're in "afternoon" or "sunset".
-            if sunsetStart != nil {
-                switch date.compare(sunsetStart!) {
-                case .OrderedAscending, .OrderedSame:
-                    period = "afternoon"
-                case .OrderedDescending:
+            case .OrderedDescending:
+                // We're after solar noon, so it's either afternoon or sunset. If "sunsetStart" is nil,
+                // we can return "sunset". If it's not, we need to compare ourselves to sunsetStart to
+                // see if we're in "afternoon" or "sunset".
+                if sunsetStart != nil {
+                    switch date.compare(sunsetStart!) {
+                    case .OrderedAscending, .OrderedSame:
+                        period = "afternoon"
+                    case .OrderedDescending:
+                        period = "sunset"
+                    }
+                } else {
                     period = "sunset"
                 }
-            } else {
-                period = "sunset"
             }
         }
 

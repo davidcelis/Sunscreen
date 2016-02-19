@@ -125,7 +125,7 @@
 				636692691C76DEA600DEA647 /* Info.plist */,
 			);
 			path = SunscreenLauncher;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		63E505A41C6FD78E003B6295 = {
 			isa = PBXGroup;
@@ -133,10 +133,10 @@
 				636692721C76DF7B00DEA647 /* ServiceManagement.framework */,
 				636692701C76DF7300DEA647 /* Cocoa.framework */,
 				63E505AF1C6FD78E003B6295 /* Sunscreen */,
+				636692611C76DEA600DEA647 /* SunscreenLauncher */,
 				63E505BF1C6FD78E003B6295 /* SunscreenTests */,
 				63E505CA1C6FD78E003B6295 /* SunscreenUITests */,
 				636692601C76DEA600DEA647 /* SunscreenLauncher.app */,
-				636692611C76DEA600DEA647 /* SunscreenLauncher */,
 			);
 			sourceTree = "<group>";
 		};

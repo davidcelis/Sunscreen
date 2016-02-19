@@ -66,7 +66,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         currentLocation = locations.last as? CLLocation
 
         if mainTimer == nil {
-            mainTimer = NSTimer(timeInterval: 60, target: self, selector: "updateTimers", userInfo: nil, repeats: true)
+            mainTimer = NSTimer(timeInterval: 60, target: self, selector: Selector("updateTimers"), userInfo: nil, repeats: true)
             NSRunLoop.mainRunLoop().addTimer(mainTimer!, forMode: NSRunLoopCommonModes)
 
             // Set the wallpaper for the first time
@@ -96,45 +96,49 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
 
         if let sunriseStart = times.sunriseStart {
             if sunriseTimer == nil && sunriseStart.compare(now) == .OrderedAscending {
-                sunriseTimer = NSTimer(fireDate: sunriseStart, interval: 0, target: self, selector: "setWallpaper", userInfo: "sunrise", repeats: false)
+                sunriseTimer = NSTimer(fireDate: sunriseStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunrise", repeats: false)
                 NSRunLoop.mainRunLoop().addTimer(sunriseTimer!, forMode: NSRunLoopCommonModes)
             }
 
             // If the sunrise ends and we enter morning, we can set everything else.
             if let sunriseEnd = times.sunriseEnd {
                 if morningTimer == nil && sunriseEnd.compare(now) == .OrderedAscending {
-                    morningTimer = NSTimer(fireDate: sunriseEnd, interval: 0, target: self, selector: "setWallpaper", userInfo: "morning", repeats: false)
+                    morningTimer = NSTimer(fireDate: sunriseEnd, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "morning", repeats: false)
                     NSRunLoop.mainRunLoop().addTimer(morningTimer!, forMode: NSRunLoopCommonModes)
                 }
 
                 if afternoonTimer == nil && noon.compare(now) == .OrderedAscending {
-                    afternoonTimer = NSTimer(fireDate: noon, interval: 0, target: self, selector: "setWallpaper", userInfo: "afternoon", repeats: false)
+                    afternoonTimer = NSTimer(fireDate: noon, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "afternoon", repeats: false)
                     NSRunLoop.mainRunLoop().addTimer(afternoonTimer!, forMode: NSRunLoopCommonModes)
                 }
 
                 let sunsetStart = times.sunsetStart!
                 if sunsetTimer == nil && sunsetStart.compare(now) == .OrderedAscending {
-                    afternoonTimer = NSTimer(fireDate: sunsetStart, interval: 0, target: self, selector: "setWallpaper", userInfo: "sunset", repeats: false)
+                    afternoonTimer = NSTimer(fireDate: sunsetStart, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "sunset", repeats: false)
                     NSRunLoop.mainRunLoop().addTimer(sunsetTimer!, forMode: NSRunLoopCommonModes)
                 }
             }
 
             let sunsetEnd = times.sunsetEnd!
             if nightTimer == nil && sunsetEnd.compare(now) == .OrderedAscending {
-                nightTimer = NSTimer(fireDate: sunsetEnd, interval: 0, target: self, selector: "setWallpaper", userInfo: "night", repeats: false)
+                nightTimer = NSTimer(fireDate: sunsetEnd, interval: 0, target: self, selector: Selector("setWallpaper:"), userInfo: "night", repeats: false)
                 NSRunLoop.mainRunLoop().addTimer(nightTimer!, forMode: NSRunLoopCommonModes)
             }
         }
     }
 
-    private func setWallpaper(timer: NSTimer) {
+    func setWallpaper(timer: NSTimer) {
         let period = timer.userInfo as! String
+
+        NSLog("Attempting to set wallpaper to \(period)...")
 
         setWallpaper(period)
     }
 
     private func setWallpaper(period: String) {
         let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(period).png")
+
+        NSLog("Setting wallpaper to \(period)...")
 
         do {
             let workspace = NSWorkspace.sharedWorkspace()
