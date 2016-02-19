@@ -37,51 +37,6 @@ class SunCalculator {
     h3 = -18 * deg2rad,   // Angle of Astronomical Twilight
     secondsInDay = Double(60 * 60 * 24)
 
-    static func getCurrentPeriod(latitude: Double, longitude: Double) -> String {
-        let now = NSDate(),
-            pos = altitudeOfSunAtTime(now, latitude: latitude, longitude: longitude)
-
-        let times = calculateTimes(now, latitude: latitude, longitude: longitude)
-
-        // The only case for nighttime is when the sun is more than six degrees below the horizon.
-        // Any less, and we have some civil twilight and we should consider ourselves
-        if pos < -6 {
-            return "night"
-        }
-
-        // If we're not in night, we should check if the current time is before or after Solar Noon.
-        switch now.compare(times.solarNoon) {
-        case .OrderedAscending, .OrderedSame:
-            // We're before solar noon, so it's either sunrise or morning. If "sunriseEnd" is nil,
-            // we can return "sunrise". If it's not, we need to compare ourselves to sunriseEnd to
-            // see if we're in "sunrise" or "morning".
-            if let sunriseEnd = times.sunriseEnd {
-                switch now.compare(sunriseEnd) {
-                case .OrderedSame, .OrderedAscending:
-                    return "sunrise"
-                case .OrderedDescending:
-                    return "morning"
-                }
-            } else {
-                return "sunrise"
-            }
-        case .OrderedDescending:
-            // We're after solar noon, so it's either afternoon or sunset. If "sunsetStart" is nil,
-            // we can return "sunset". If it's not, we need to compare ourselves to sunsetStart to
-            // see if we're in "afternoon" or "sunset".
-            if let sunsetStart = times.sunsetStart {
-                switch now.compare(sunsetStart) {
-                case .OrderedAscending, .OrderedSame:
-                    return "afternoon"
-                case .OrderedDescending:
-                    return "sunset"
-                }
-            } else {
-                return "sunset"
-            }
-        }
-    }
-
     static func calculateTimes(date: NSDate, latitude: Double, longitude: Double) -> SunData {
         let now = date.timeIntervalSince1970,
         lw = -longitude * deg2rad,
