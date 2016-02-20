@@ -75,28 +75,39 @@ class PreferencesWindow: NSWindowController {
 
     private func imageDropped(sender: NSImageView, name: String) {
         let manager = NSFileManager.defaultManager(),
-            path = "\(wallpapersPath)/\(name).png"
+            defaults = NSUserDefaults.standardUserDefaults(),
+            uuid = NSUUID().UUIDString,
+            path = "\(wallpapersPath)/\(uuid).png"
+
+        // If there's an old image, delete it
+        removeWallpaper(name)
 
         if let image = sender.image {
-            NSLog("Image added")
             let bmp = NSBitmapImageRep(data: image.TIFFRepresentation!)
             let png = bmp!.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [:])
             manager.createFileAtPath(path, contents: png, attributes: nil)
-        } else {
-            NSLog("Image removed")
-            do {
-                try manager.removeItemAtPath(path)
-            } catch {
-                NSLog("\(error)")
-            }
+            defaults.setValue(path, forKey: "\(name)Wallpaper")
         }
     }
 
     private func loadWallpaper(name: String, imageView: NSImageView) {
-        let path = "\(wallpapersPath)/\(name).png"
+        let defaults = NSUserDefaults.standardUserDefaults()
 
-        if let image = NSImage(byReferencingFile: path) {
+        if let path = defaults.valueForKey("\(name)Wallpaper"), image = NSImage(byReferencingFile: path as! String) {
             imageView.image = image
+        }
+    }
+
+    private func removeWallpaper(name: String) {
+        let manager = NSFileManager.defaultManager(),
+            defaults = NSUserDefaults.standardUserDefaults()
+
+        if let oldImagePath = defaults.valueForKey("\(name)Wallpaper") {
+            do {
+                try manager.removeItemAtPath(oldImagePath as! String)
+            } catch {
+                NSLog("\(error)")
+            }
         }
     }
 }

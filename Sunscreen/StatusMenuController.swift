@@ -37,7 +37,7 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         case .Restricted:
             showLocationServicesErrorForStatus(CLAuthorizationStatus.Restricted)
         default:
-            NSLog("Location Services can be authorized or accessed.")
+            break
         }
 
         showPreferences()
@@ -62,6 +62,9 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
         if timer == nil {
             timer = NSTimer(fireDate: NSDate(), interval: 60, target: self, selector: Selector("updateWallpaper"), userInfo: nil, repeats: true)
             NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+
+            let workspace = NSWorkspace.sharedWorkspace()
+            workspace.notificationCenter.addObserver(self, selector: "updateWallpaper", name: NSWorkspaceActiveSpaceDidChangeNotification, object: workspace)
         }
     }
 
@@ -93,18 +96,22 @@ class StatusMenuController: NSObject, CLLocationManagerDelegate {
     }
 
     private func setWallpaper(period: String) {
-        let imagePath = NSURL.fileURLWithPath("\(preferencesWindow.wallpapersPath)/\(period).png")
+        let defaults = NSUserDefaults.standardUserDefaults()
 
-        do {
-            let workspace = NSWorkspace.sharedWorkspace()
+        if let path = defaults.valueForKey("\(period)Wallpaper") {
+            let url = NSURL.fileURLWithPath(path as! String)
 
-            if let screens = NSScreen.screens() {
-                for screen in screens {
-                    try workspace.setDesktopImageURL(imagePath, forScreen: screen, options: [:])
+            do {
+                let workspace = NSWorkspace.sharedWorkspace()
+
+                if let screens = NSScreen.screens() {
+                    for screen in screens {
+                        try workspace.setDesktopImageURL(url, forScreen: screen, options: workspace.desktopImageOptionsForScreen(screen)!)
+                    }
                 }
+            } catch {
+                NSLog("\(error)")
             }
-        } catch {
-            NSLog("\(error)")
         }
     }
 
