@@ -26,6 +26,15 @@ class PreferencesWindow: NSWindowController {
 
     override func windowDidLoad() {
         loadExistingWallpapers()
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+
+        switch defaults.valueForKey("launchAtLogin") as! Bool {
+        case true:
+            startAtLoginButton.state = 1
+        case false:
+            startAtLoginButton.state = 0
+        }
     }
 
     func loadExistingWallpapers() {
