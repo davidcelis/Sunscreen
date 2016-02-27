@@ -26,11 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.valueForKey("launchAtLogin") == nil {
-            defaults.setValue(false, forKey: "launchAtLogin")
-        }
 
-        if defaults.valueForKey("launchAtLogin") as! Bool {
+        if defaults.boolForKey("launchAtLogin") {
             SMLoginItemSetEnabled(identifier, true)
         }
     }

@@ -29,7 +29,7 @@ class PreferencesWindow: NSWindowController {
 
         let defaults = NSUserDefaults.standardUserDefaults()
 
-        switch defaults.valueForKey("launchAtLogin") as! Bool {
+        switch defaults.boolForKey("launchAtLogin") {
         case true:
             startAtLoginButton.state = 1
         case false:
@@ -71,13 +71,13 @@ class PreferencesWindow: NSWindowController {
 
         switch sender.state {
         case 1:
-            defaults.setValue(true, forKey: "launchAtLogin")
+            defaults.setBool(true, forKey: "launchAtLogin")
             SMLoginItemSetEnabled(identifier, true)
         case 0:
-            defaults.setValue(false, forKey: "launchAtLogin")
+            defaults.setBool(false, forKey: "launchAtLogin")
             SMLoginItemSetEnabled(identifier, false)
         default:
-            defaults.setValue(false, forKey: "launchAtLogin")
+            defaults.setBool(false, forKey: "launchAtLogin")
             SMLoginItemSetEnabled(identifier, false)
         }
     }
