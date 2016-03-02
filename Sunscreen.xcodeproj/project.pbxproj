@@ -14,6 +14,7 @@
 		631B48F31C778327005E8FC7 /* SunscreenLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 631B48EE1C77809C005E8FC7 /* SunscreenLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		631B48F41C778346005E8FC7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636692701C76DF7300DEA647 /* Cocoa.framework */; };
 		631B48F51C77834B005E8FC7 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636692721C76DF7B00DEA647 /* ServiceManagement.framework */; };
+		634141DE1C87A9B100AE380E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 634141DD1C87A9B100AE380E /* README.md */; };
 		636692631C76DEA600DEA647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636692621C76DEA600DEA647 /* AppDelegate.swift */; };
 		636692651C76DEA600DEA647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636692641C76DEA600DEA647 /* Assets.xcassets */; };
 		636692681C76DEA600DEA647 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636692661C76DEA600DEA647 /* MainMenu.xib */; };
@@ -70,6 +71,7 @@
 		631B48EE1C77809C005E8FC7 /* SunscreenLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunscreenLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		631B48F61C7783B6005E8FC7 /* SunscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunscreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631B48F71C7783B6005E8FC7 /* SunscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunscreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		634141DD1C87A9B100AE380E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		636692621C76DEA600DEA647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		636692641C76DEA600DEA647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		636692671C76DEA600DEA647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		63E505A41C6FD78E003B6295 = {
 			isa = PBXGroup;
 			children = (
+				634141DD1C87A9B100AE380E /* README.md */,
 				636692721C76DF7B00DEA647 /* ServiceManagement.framework */,
 				636692701C76DF7300DEA647 /* Cocoa.framework */,
 				63E505AF1C6FD78E003B6295 /* Sunscreen */,
@@ -371,6 +374,7 @@
 			files = (
 				630918781C70F9E8004F7D4B /* PreferencesWindow.swift in Sources */,
 				63E505DA1C6FE77D003B6295 /* StatusMenuController.swift in Sources */,
+				634141DE1C87A9B100AE380E /* README.md in Sources */,
 				63E505B11C6FD78E003B6295 /* AppDelegate.swift in Sources */,
 				6315A8F21C724350007769A1 /* SunCalculator.swift in Sources */,
 			);
