@@ -5,11 +5,15 @@
 //  Created by David Celis on 2/15/16.
 //  Copyright © 2016 David Celis. All rights reserved.
 //
+//  The source code of this project is licensed under The MIT License. A copy of this license
+//  can be found in the LICENSE file in the root of this repository.
+//
 //  Note: This class contains several lines of commented out code. For the purposes of this app,
 //  I use the beginning of Civil Twilight instead of the beginning of actual the Sunrise, and I
 //  use the end of Civil Twilight instead of the end of the actual Sunset. I have left the
 //  original values commented out in case I wish to make the distinction between civil twilight,
 //  sunrise, and sunset at some point in the future.
+//
 
 import Foundation
 

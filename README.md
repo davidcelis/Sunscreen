@@ -10,6 +10,10 @@ If you want to skip a period and leave the wallpaper alone, you can simply leave
 
 Sunscreen is completely unobtrusive and stays out of your way. It runs solely in your menu bar, leaving your Dock without any extra clutter.
 
+## License
+
+Sunscreen is licensed under [The MIT License](/LICENSE). You are free to download the source code and build a binary using Xcode. However, if you enjoy using the app, please consider purchasing it on the App Store for a dollar.
+
 <div align="center">
   <a href="https://itunes.apple.com/us/app/sunscreen/id1086160282?mt=12">
     <img src="https://cdn.rawgit.com/davidcelis/Sunscreen/master/images/app-store.svg">

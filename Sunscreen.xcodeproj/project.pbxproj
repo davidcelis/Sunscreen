@@ -72,6 +72,7 @@
 		631B48F61C7783B6005E8FC7 /* SunscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunscreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		631B48F71C7783B6005E8FC7 /* SunscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunscreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		634141DD1C87A9B100AE380E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		634141DF1C87AD7000AE380E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		636692621C76DEA600DEA647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		636692641C76DEA600DEA647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		636692671C76DEA600DEA647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				634141DD1C87A9B100AE380E /* README.md */,
+				634141DF1C87AD7000AE380E /* LICENSE */,
 				636692721C76DF7B00DEA647 /* ServiceManagement.framework */,
 				636692701C76DF7300DEA647 /* Cocoa.framework */,
 				63E505AF1C6FD78E003B6295 /* Sunscreen */,
